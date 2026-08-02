@@ -1,6 +1,5 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/vendor_story.dart';
-import '../models/service_type.dart';
 
 class VendorStoriesNotifier extends Notifier<List<VendorStory>> {
   @override

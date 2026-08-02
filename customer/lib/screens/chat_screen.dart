@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:swift_core/swift_core.dart';
 
 // ---------------------------------------------------------------------------
 // Model
@@ -414,7 +414,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.06),
+                  color: Colors.black.withOpacity(0.06),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),

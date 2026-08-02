@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/notifications_provider.dart';
 

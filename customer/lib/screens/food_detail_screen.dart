@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../models/food_item.dart';
 import '../providers/food_cart_provider.dart';
 import 'checkout_screen.dart';
 
@@ -265,12 +264,18 @@ class _FoodDetailScreenState extends ConsumerState<FoodDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Listen to real-time stock changes
+    ref.watch(liveRegistryProvider).updates;
+    final bool isInStock = ref.read(liveRegistryProvider).isItemInStock(widget.restaurantName ?? 'Mama\'s Kitchen', widget.title);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: [
           CustomScrollView(
+            physics: const BouncingScrollPhysics(),
             slivers: [
+              // ... rest of the build content
               // ── Hero AppBar ─────────────────────────────────────────────
               SliverAppBar(
                 expandedHeight: 300.0,
@@ -281,7 +286,7 @@ class _FoodDetailScreenState extends ConsumerState<FoodDetailScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.9),
+                      color: Colors.white.withOpacity(0.9),
                       shape: BoxShape.circle,
                       boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))],
                     ),
@@ -296,7 +301,7 @@ class _FoodDetailScreenState extends ConsumerState<FoodDetailScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.9),
+                        color: Colors.white.withOpacity(0.9),
                         shape: BoxShape.circle,
                         boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))],
                       ),
@@ -449,11 +454,11 @@ class _FoodDetailScreenState extends ConsumerState<FoodDetailScreen> {
                   // ── Add to Cart button ─────────────────────────────────
                   Expanded(
                     child: Opacity(
-                      opacity: _isValid ? 1.0 : 0.5,
+                      opacity: (_isValid && isInStock) ? 1.0 : 0.5,
                       child: ElevatedButton(
-                        onPressed: _onAddToCart,
+                        onPressed: isInStock ? _onAddToCart : null,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF0068FF),
+                          backgroundColor: isInStock ? const Color(0xFF0068FF) : AppColors.textMuted,
                           foregroundColor: Colors.white,
                           elevation: 0,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
@@ -462,12 +467,14 @@ class _FoodDetailScreenState extends ConsumerState<FoodDetailScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Add to Cart', style: AppFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
-                            const Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 8),
-                              child: Text('•', style: TextStyle(color: Colors.white54)),
-                            ),
-                            Text('₵${_totalPrice.toStringAsFixed(2)}', style: AppFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                            Text(isInStock ? 'Add to Cart' : 'Out of Stock', style: AppFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                            if (isInStock) ...[
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 8),
+                                child: Text('•', style: TextStyle(color: Colors.white54)),
+                              ),
+                              Text('₵${_totalPrice.toStringAsFixed(2)}', style: AppFonts.inter(fontSize: 16, fontWeight: FontWeight.bold)),
+                            ],
                           ],
                         ),
                       ),

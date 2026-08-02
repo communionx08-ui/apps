@@ -1,9 +1,8 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import '../core/theme/app_fonts.dart';
-import '../models/vendor_story.dart';
-import '../widgets/animated_press.dart';
 import 'vendor_store_screen.dart';
 import 'restaurant_screen.dart';
 import 'food_detail_screen.dart';

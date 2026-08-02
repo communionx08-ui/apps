@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:swift_core/swift_core.dart';
 
 class VoiceSearchScreen extends StatefulWidget {
   const VoiceSearchScreen({super.key});
@@ -274,7 +274,7 @@ class _VoiceSearchScreenState extends State<VoiceSearchScreen>
                         height: 80,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: const Color(0xFF0068FF).withValues(alpha: 0.25),
+                          color: const Color(0xFF0068FF).withOpacity(0.25),
                         ),
                       ),
                     ),
@@ -299,7 +299,7 @@ class _VoiceSearchScreenState extends State<VoiceSearchScreen>
                         height: 80,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: const Color(0xFF0068FF).withValues(alpha: 0.4),
+                          color: const Color(0xFF0068FF).withOpacity(0.4),
                         ),
                       ),
                     ),
@@ -318,7 +318,7 @@ class _VoiceSearchScreenState extends State<VoiceSearchScreen>
                 boxShadow: isActive
                     ? [
                         BoxShadow(
-                          color: const Color(0xFF0068FF).withValues(alpha: 0.30),
+                          color: const Color(0xFF0068FF).withOpacity(0.30),
                           blurRadius: 20,
                           offset: const Offset(0, 6),
                         ),

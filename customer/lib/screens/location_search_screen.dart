@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
-import 'package:swift_customer/models/address.dart';
+import 'package:flutter/material.dart';
+
 import 'package:swift_customer/services/place_api_provider.dart';
-import 'package:swift_customer/models/place_models.dart';
 import 'package:uuid/uuid.dart';
 
 /// Full-screen location search with 3 tabs: Search, Ghana Post GPS, what3words

@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/laundry_cart_provider.dart';
-import '../widgets/address_modal.dart';
 import 'checkout_screen.dart';
 
 class SchedulePickupScreen extends ConsumerStatefulWidget {
@@ -258,7 +257,7 @@ class _SchedulePickupScreenState extends ConsumerState<SchedulePickupScreen> {
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: isSelected ? Colors.transparent : const Color(0xFFE2E8F0)),
                           boxShadow: isSelected
-                              ? [BoxShadow(color: const Color(0xFF0068FF).withValues(alpha: 0.3), blurRadius: 10, offset: const Offset(0, 4))]
+                              ? [BoxShadow(color: const Color(0xFF0068FF).withOpacity(0.3), blurRadius: 10, offset: const Offset(0, 4))]
                               : [],
                         ),
                         child: Column(
@@ -303,7 +302,7 @@ class _SchedulePickupScreenState extends ConsumerState<SchedulePickupScreen> {
                         borderRadius: BorderRadius.circular(999),
                         border: Border.all(color: isSelected ? Colors.transparent : const Color(0xFFE2E8F0)),
                         boxShadow: isSelected
-                            ? [BoxShadow(color: const Color(0xFF0068FF).withValues(alpha: 0.3), blurRadius: 6, offset: const Offset(0, 2))]
+                            ? [BoxShadow(color: const Color(0xFF0068FF).withOpacity(0.3), blurRadius: 6, offset: const Offset(0, 2))]
                             : [],
                       ),
                       child: Text(_times[index],

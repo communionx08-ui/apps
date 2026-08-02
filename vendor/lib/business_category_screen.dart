@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'business_information_screen.dart';
 
 class BusinessCategoryScreen extends StatefulWidget {
@@ -124,7 +124,7 @@ class _BusinessCategoryScreenState extends State<BusinessCategoryScreen> {
                           child: Text(
                             'Vendor Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -165,7 +165,7 @@ class _BusinessCategoryScreenState extends State<BusinessCategoryScreen> {
                   // Header with modern entrance animation
                   Text(
                     'What type of business\ndo you have?',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -179,7 +179,7 @@ class _BusinessCategoryScreenState extends State<BusinessCategoryScreen> {
                   
                   Text(
                     'Choose the category that best describes your business',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -322,7 +322,7 @@ class _BusinessCategoryCard extends StatelessWidget {
                 children: [
                   Text(
                     businessCategory.label,
-                    style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+                    style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
                     ),
@@ -330,7 +330,7 @@ class _BusinessCategoryCard extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     businessCategory.sub,
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 14,
                       height: 1.3,
                     ),

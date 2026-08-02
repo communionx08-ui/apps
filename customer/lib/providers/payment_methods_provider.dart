@@ -1,5 +1,5 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/payment_method.dart';
 
 /// Saved payment methods (MoMo numbers / cards). This is what the Profile →
 /// "Payment Methods" screen and the checkout payment-method list both read

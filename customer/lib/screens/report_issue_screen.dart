@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
-import '../models/order.dart';
+import 'package:flutter/material.dart';
 import 'chat_screen.dart';
 
 const Color _primary = Color(0xFF0068FF);

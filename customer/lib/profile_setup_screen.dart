@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'terms_screen.dart';
 import 'location_permission_screen.dart';
 
@@ -91,7 +91,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
           SnackBar(
             content: Text(
               'Failed to save profile. Please try again.',
-              style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+              style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
             ),
             backgroundColor: AppColors.danger,
             behavior: SnackBarBehavior.floating,
@@ -136,7 +136,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
             filled: true,
             fillColor: readOnly ? AppColors.background : Colors.white,
             hintText: hintText,
-            hintStyle: AppTypography.bodyLg(AppColors.textMuted),
+            hintStyle: AppTypography.bodyLg()(AppColors.textMuted),
             suffixIcon: suffix,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
@@ -258,7 +258,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                       
                       Text(
                         'We retrieved your name from your verification. You can edit it if needed.',
-                        style: AppTypography.body(AppColors.textMuted).copyWith(
+                        style: AppTypography.body()(AppColors.textMuted).copyWith(
                           fontSize: 16,
                           height: 1.6,
                         ),
@@ -300,7 +300,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                                     SnackBar(
                                       content: Text(
                                         'Photo upload coming soon!',
-                                        style: AppTypography.body(Colors.white),
+                                        style: AppTypography.body()(Colors.white),
                                       ),
                                       backgroundColor: AppColors.textPrimary,
                                       behavior: SnackBarBehavior.floating,
@@ -412,7 +412,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                       
                       Text(
                         'Add your email to receive order updates and receipts',
-                        style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                        style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                           height: 1.5,
                         ),
                       )

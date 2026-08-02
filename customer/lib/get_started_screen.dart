@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'otp_verification_screen.dart';
 import 'email_verification_screen.dart';
 import 'phone_collection_screen.dart';
@@ -123,7 +123,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
       SnackBar(
         content: Text(
           message,
-          style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+          style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
         ),
         backgroundColor: AppColors.textPrimary,
         behavior: SnackBarBehavior.floating,
@@ -288,7 +288,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
               
               Text(
                 'We\'ll send you a verification code',
-                style: AppTypography.body(AppColors.textMuted),
+                style: AppTypography.body()(AppColors.textMuted),
               ),
               const SizedBox(height: 24),
               
@@ -301,7 +301,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                   filled: true,
                   fillColor: AppColors.background,
                   hintText: 'Enter your email address',
-                  hintStyle: AppTypography.bodyLg(AppColors.textMuted),
+                  hintStyle: AppTypography.bodyLg()(AppColors.textMuted),
                   prefixIcon: const Icon(Icons.email_outlined, color: AppColors.textMuted),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -424,7 +424,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
               children: [
                 Text(
                   'Akwaaba!',
-                  style: AppTypography.h1(Colors.white).copyWith(
+                  style: AppTypography.h1()(Colors.white).copyWith(
                     fontSize: 32,
                     fontWeight: FontWeight.w600,
                     letterSpacing: -1,
@@ -442,7 +442,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                 RichText(
                   textAlign: TextAlign.left,
                   text: TextSpan(
-                    style: AppTypography.body(Colors.white).copyWith(fontSize: 16.96),
+                    style: AppTypography.body()(Colors.white).copyWith(fontSize: 16.96),
                     children: const [
                       TextSpan(
                           text: 'Welcome to ',
@@ -502,7 +502,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                     
                     Text(
                       'Enter your phone number',
-                      style: AppTypography.body(AppColors.textSecondary).copyWith(
+                      style: AppTypography.body()(AppColors.textSecondary).copyWith(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                         height: 1.6,
@@ -543,7 +543,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                               const SizedBox(width: 8),
                               Text(
                                 '|',
-                                style: AppTypography.bodyLg(AppColors.textMuted).copyWith(
+                                style: AppTypography.bodyLg()(AppColors.textMuted).copyWith(
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -553,7 +553,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                                   _phoneCtrl.text.isEmpty
                                       ? 'Phone Number'
                                       : _phoneCtrl.text,
-                                  style: AppTypography.bodyLg(_phoneCtrl.text.isEmpty
+                                  style: AppTypography.bodyLg()(_phoneCtrl.text.isEmpty
                                           ? AppColors.textMuted
                                           : AppColors.textPrimary)
                                       .copyWith(
@@ -587,7 +587,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                                 alignment: Alignment.centerLeft,
                                 child: Text(
                                   _phoneError!,
-                                  style: AppTypography.bodySm(AppColors.danger).copyWith(fontSize: 13),
+                                  style: AppTypography.bodySm()(AppColors.danger).copyWith(fontSize: 13),
                                 ),
                               ),
                             )
@@ -619,7 +619,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Text(
                             'or',
-                            style: AppTypography.body(AppColors.textMuted).copyWith(
+                            style: AppTypography.body()(AppColors.textMuted).copyWith(
                               fontSize: 16.96,
                               fontWeight: FontWeight.w400,
                             ),
@@ -673,7 +673,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Text(
                             'or',
-                            style: AppTypography.body(AppColors.textMuted).copyWith(
+                            style: AppTypography.body()(AppColors.textMuted).copyWith(
                               fontSize: 16.96,
                               fontWeight: FontWeight.w400,
                             ),
@@ -725,7 +725,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                                 
                                 Text(
                                   'Choose how you want to recover your account',
-                                  style: AppTypography.body(AppColors.textMuted),
+                                  style: AppTypography.body()(AppColors.textMuted),
                                   textAlign: TextAlign.center,
                                 ),
                                 const SizedBox(height: 24),
@@ -756,7 +756,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                       },
                       child: Text(
                         'Find my account',
-                        style: AppTypography.body(AppColors.textMuted).copyWith(
+                        style: AppTypography.body()(AppColors.textMuted).copyWith(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
                           decoration: TextDecoration.underline,
@@ -898,7 +898,7 @@ class _PhoneInputFullScreenState extends State<_PhoneInputFullScreen> {
               
               Text(
                 'We\'ll send a code for verification',
-                style: AppTypography.body(AppColors.textMuted).copyWith(
+                style: AppTypography.body()(AppColors.textMuted).copyWith(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,
                   height: 1.5,
@@ -970,7 +970,7 @@ class _PhoneInputFullScreenState extends State<_PhoneInputFullScreen> {
                               filled: true,
                               fillColor: Colors.white,
                               hintText: 'Phone number',
-                              hintStyle: AppTypography.bodyLg(AppColors.textMuted),
+                              hintStyle: AppTypography.bodyLg()(AppColors.textMuted),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
                                 borderSide: const BorderSide(color: AppColors.primary, width: 2),
@@ -1010,7 +1010,7 @@ class _PhoneInputFullScreenState extends State<_PhoneInputFullScreen> {
                                   padding: const EdgeInsets.only(top: 6, left: 4),
                                   child: Text(
                                     _phoneError!,
-                                    style: AppTypography.bodySm(AppColors.danger),
+                                    style: AppTypography.bodySm()(AppColors.danger),
                                   ),
                                 )
                               : const SizedBox.shrink(key: ValueKey('no-error')),
@@ -1052,7 +1052,7 @@ class _PhoneInputFullScreenState extends State<_PhoneInputFullScreen> {
               // Privacy text
               Text(
                 'Swift will not send anything without your consent.',
-                style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                   height: 1.5,
                 ),
               )

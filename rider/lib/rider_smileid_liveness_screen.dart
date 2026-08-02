@@ -1,10 +1,10 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:async';
 import 'dart:typed_data';
 import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'package:image/image.dart' as img;
 import 'rider_smileid_processing_screen.dart';
 
@@ -202,7 +202,7 @@ class _RiderSmileIdLivenessScreenState
       SnackBar(
         content: Text(
           message,
-          style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+          style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
         ),
         backgroundColor: AppColors.danger,
         behavior: SnackBarBehavior.floating,
@@ -297,7 +297,7 @@ class _RiderSmileIdLivenessScreenState
                           child: Text(
                             'Liveness Check',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary)
+                            style: AppTypography.h2()(AppColors.textPrimary)
                                 .copyWith(fontWeight: FontWeight.w600),
                           ),
                         ),
@@ -335,7 +335,7 @@ class _RiderSmileIdLivenessScreenState
                   
                   Text(
                     'Liveness Check',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -353,7 +353,7 @@ class _RiderSmileIdLivenessScreenState
                   
                   Text(
                     'Look straight at the camera and stay still. We\'ll capture 6 frames automatically.',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -404,7 +404,7 @@ class _RiderSmileIdLivenessScreenState
                                           const SizedBox(height: 16),
                                           Text(
                                             'Web Testing Mode',
-                                            style: AppTypography.body(Colors.white).copyWith(
+                                            style: AppTypography.body()(Colors.white).copyWith(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -412,7 +412,7 @@ class _RiderSmileIdLivenessScreenState
                                           const SizedBox(height: 8),
                                           Text(
                                             'Click Start to generate mock frames',
-                                            style: AppTypography.body(Colors.white.withOpacity(0.7)).copyWith(
+                                            style: AppTypography.body()(Colors.white.withOpacity(0.7)).copyWith(
                                               fontSize: 14,
                                             ),
                                           ),
@@ -425,7 +425,7 @@ class _RiderSmileIdLivenessScreenState
                                       : Center(
                                           child: Text(
                                             'Camera not available',
-                                            style: AppTypography.body(Colors.white),
+                                            style: AppTypography.body()(Colors.white),
                                           ),
                                         ),
                         ),
@@ -464,7 +464,7 @@ class _RiderSmileIdLivenessScreenState
                             ),
                             child: Text(
                               _statusText,
-                              style: AppTypography.body(Colors.white).copyWith(
+                              style: AppTypography.body()(Colors.white).copyWith(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -487,7 +487,7 @@ class _RiderSmileIdLivenessScreenState
                             ),
                             child: Text(
                               '${_livenessFrames.length}/6',
-                              style: AppTypography.body(Colors.white).copyWith(
+                              style: AppTypography.body()(Colors.white).copyWith(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w700,
                               ),
@@ -539,7 +539,7 @@ class _RiderSmileIdLivenessScreenState
                                 child: Text(
                                   '${index + 1}',
                                   style:
-                                      AppTypography.bodySm(AppColors.textMuted)
+                                      AppTypography.bodySm()(AppColors.textMuted)
                                           .copyWith(fontSize: 12),
                                 ),
                               ),

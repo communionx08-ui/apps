@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../core/constants/app_constants.dart';
@@ -101,7 +101,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     _userPhone.isNotEmpty ? _userPhone : 'No phone number',
                     style: AppFonts.inter(
                       fontSize: 14,
-                      color: Colors.white.withValues(alpha: 0.8),
+                      color: Colors.white.withOpacity(0.8),
                     ),
                   ),
                 ],

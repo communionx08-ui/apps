@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'parcel_shipping_screen.dart';
 
 class ParcelDetailsScreen extends StatefulWidget {
@@ -90,7 +90,7 @@ class _ParcelDetailsScreenState extends State<ParcelDetailsScreen> {
                   height: 6,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFEC5B13).withValues(alpha: 0.3),
+                    color: const Color(0xFFEC5B13).withOpacity(0.3),
                     borderRadius: BorderRadius.circular(999),
                   ),
                   child: FractionallySizedBox(
@@ -128,7 +128,7 @@ class _ParcelDetailsScreenState extends State<ParcelDetailsScreen> {
                         decoration: BoxDecoration(
                           border: Border(
                             left: BorderSide(
-                              color: const Color(0xFFEC5B13).withValues(alpha: 0.3),
+                              color: const Color(0xFFEC5B13).withOpacity(0.3),
                               width: 2,
                               style: BorderStyle.solid,
                             ),
@@ -316,7 +316,7 @@ class _ParcelDetailsScreenState extends State<ParcelDetailsScreen> {
               child: Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.9),
+                  color: Colors.white.withOpacity(0.9),
                   border: const Border(top: BorderSide(color: Color(0x1AEC5B13))),
                 ),
                 child: SafeArea(

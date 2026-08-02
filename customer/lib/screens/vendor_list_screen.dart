@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/store_status_provider.dart';
-import '../widgets/filter_sort_modal.dart';
-import '../widgets/store_status_badge.dart';
 import 'catalogue_store_screen.dart';
 
 class VendorListScreen extends ConsumerStatefulWidget {
@@ -213,7 +211,7 @@ class _VendorListScreenState extends ConsumerState<VendorListScreen> {
                 onTap: () => Navigator.pop(context),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.2),
+                    color: Colors.white.withOpacity(0.2),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(Icons.arrow_back, color: Colors.white, size: 20),
@@ -271,7 +269,7 @@ class _VendorListScreenState extends ConsumerState<VendorListScreen> {
                               boxShadow: isActive
                                   ? [
                                       BoxShadow(
-                                        color: const Color(0xFF0068FF).withValues(alpha: 0.2),
+                                        color: const Color(0xFF0068FF).withOpacity(0.2),
                                         blurRadius: 6,
                                         offset: const Offset(0, 2),
                                       )
@@ -324,7 +322,7 @@ class _VendorListScreenState extends ConsumerState<VendorListScreen> {
                           child: Container(
                             padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 7),
                             decoration: BoxDecoration(
-                              color: _filterSort.isDefault ? Colors.white : const Color(0xFF0068FF).withValues(alpha: 0.08),
+                              color: _filterSort.isDefault ? Colors.white : const Color(0xFF0068FF).withOpacity(0.08),
                               borderRadius: BorderRadius.circular(16),
                               border: Border.all(color: _filterSort.isDefault ? const Color(0xFFE2E8F0) : const Color(0xFF0068FF)),
                             ),
@@ -491,7 +489,7 @@ class _VendorListScreenState extends ConsumerState<VendorListScreen> {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.9),
+                        color: Colors.white.withOpacity(0.9),
                         shape: BoxShape.circle,
                         boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4)],
                       ),

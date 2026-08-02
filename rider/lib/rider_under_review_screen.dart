@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 
 class RiderUnderReviewScreen extends StatelessWidget {
   const RiderUnderReviewScreen({super.key});
@@ -52,7 +52,7 @@ class RiderUnderReviewScreen extends StatelessWidget {
               
               Text(
                 'Thank you for applying to be a Swift rider. Our team is reviewing your application and documents.',
-                style: AppTypography.body(AppColors.textSecondary).copyWith(
+                style: AppTypography.body()(AppColors.textSecondary).copyWith(
                   fontSize: 16,
                   height: 1.5,
                 ),
@@ -125,7 +125,7 @@ class RiderUnderReviewScreen extends StatelessWidget {
                     Expanded(
                       child: Text(
                         'Make sure your phone number is active so we can reach you with updates.',
-                        style: AppTypography.body(AppColors.primary).copyWith(
+                        style: AppTypography.body()(AppColors.primary).copyWith(
                           fontWeight: FontWeight.w500,
                           height: 1.4,
                         ),
@@ -189,14 +189,14 @@ class _InfoRow extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: AppTypography.body(AppColors.textMuted).copyWith(
+                style: AppTypography.body()(AppColors.textMuted).copyWith(
                   fontSize: 14,
                 ),
               ),
               const SizedBox(height: 4),
               Text(
                 value,
-                style: AppTypography.body(AppColors.textPrimary).copyWith(
+                style: AppTypography.body()(AppColors.textPrimary).copyWith(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),

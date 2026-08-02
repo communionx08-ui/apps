@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Single source of truth for the "Swift Wallet" balance.

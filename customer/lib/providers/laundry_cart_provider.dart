@@ -1,10 +1,10 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // LaundryItem model is available for vendor screen item definitions;
 // the cart itself tracks name → quantity.  Full pricing integration
 // will be done in the laundry-flow milestone when vendor/cart screens
 // are reworked together.
-export '../models/laundry_item.dart';
 
 class LaundryCartNotifier extends Notifier<Map<String, int>> {
   @override

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'laundry_cart_screen.dart';
 
@@ -297,7 +297,7 @@ class _VendorStoreScreenState extends ConsumerState<VendorStoreScreen> {
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF0068FF).withValues(alpha: 0.4),
+                        color: const Color(0xFF0068FF).withOpacity(0.4),
                         blurRadius: 16,
                         offset: const Offset(0, 6),
                       ),
@@ -308,7 +308,7 @@ class _VendorStoreScreenState extends ConsumerState<VendorStoreScreen> {
                       Container(
                         padding: const EdgeInsets.all(4),
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.2),
+                          color: Colors.white.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
@@ -348,7 +348,7 @@ class _VendorStoreScreenState extends ConsumerState<VendorStoreScreen> {
         width: 40,
         height: 40,
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.2),
+          color: Colors.white.withOpacity(0.2),
           shape: BoxShape.circle,
         ),
         child: Icon(icon, color: Colors.white, size: 20),
@@ -446,7 +446,7 @@ class _VendorStoreScreenState extends ConsumerState<VendorStoreScreen> {
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF0068FF).withValues(alpha: 0.3),
+                      color: const Color(0xFF0068FF).withOpacity(0.3),
                       blurRadius: 8,
                       offset: const Offset(0, 4),
                     ),

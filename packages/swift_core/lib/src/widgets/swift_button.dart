@@ -1,3 +1,5 @@
+import 'package:swift_core/swift_core.dart';
+import 'dart:math' as math;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../motion/motion.dart';
@@ -9,7 +11,8 @@ import 'animated_press.dart';
 class SwiftButton extends StatefulWidget {
   const SwiftButton({
     super.key,
-    required this.label,
+    String? label,
+    String? text,
     this.onPressed,
     this.icon,
     this.isLoading = false,
@@ -20,7 +23,7 @@ class SwiftButton extends StatefulWidget {
     this.textColor,
     this.fullWidth = true,
     this.height = 54,
-  });
+  }) : label = label ?? text ?? '';
 
   final String label;
   final VoidCallback? onPressed;
@@ -194,7 +197,7 @@ class _SwiftButtonState extends State<SwiftButton>
         animation: _shakeCtrl,
         builder: (_, child) {
           final v = _shakeCtrl.value;
-          final sine = 8.0 * math.sin(v * 3 * 3.1415926) * (1 - v);
+          final sine = 8.0 * math.math.math.sin(v * 3 * 3.1415926) * (1 - v);
           return Transform.translate(offset: Offset(sine, 0), child: child);
         },
         child: content,

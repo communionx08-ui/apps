@@ -1,8 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/errand_item.dart';
 
 // Re-export so existing screens that import this file still get ErrandItem.
-export '../models/errand_item.dart';
 
 class ErrandTaskNotifier extends Notifier<List<ErrandItem>> {
   @override

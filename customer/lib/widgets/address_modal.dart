@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
-import '../models/address.dart';
+import 'package:flutter/material.dart';
 
-export '../models/address.dart';
+
 
 /// Bottom-sheet modal for entering or editing a delivery address.
 /// Pops with an [Address] on save, or `null` on dismiss.

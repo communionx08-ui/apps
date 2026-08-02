@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 
 /// Section header with a title and optional "See All" / custom action link.
 class SectionHeader extends StatelessWidget {

@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/cart_item.dart';
-import '../models/order.dart';
 import '../providers/order_history_provider.dart';
 import 'checkout_screen.dart';
 import 'order_detail_screen.dart';

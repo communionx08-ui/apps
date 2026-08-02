@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
-import 'home_screen.dart';
+import 'main_scaffold.dart';
 
 class UnderReviewScreen extends StatefulWidget {
   final String vendorType;
@@ -59,7 +59,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
           SnackBar(
             content: Text(
               "Status is still under review. We'll notify you once complete.",
-              style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+              style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
             ),
             backgroundColor: AppColors.textPrimary,
             behavior: SnackBarBehavior.floating,
@@ -77,7 +77,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
       SnackBar(
         content: Text(
           'Opening support chat...',
-          style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+          style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
         ),
         backgroundColor: AppColors.primary,
         behavior: SnackBarBehavior.floating,
@@ -92,7 +92,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
     Navigator.pushAndRemoveUntil(
       context,
       PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) => const HomeScreen(),
+        pageBuilder: (context, animation, secondaryAnimation) => const MainScaffold(),
         transitionDuration: const Duration(milliseconds: 500),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return FadeTransition(
@@ -151,7 +151,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
                     child: Text(
                       'Application Status',
                       textAlign: TextAlign.center,
-                      style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                      style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                       ),
@@ -268,7 +268,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
                   // Title and description
                   Text(
                     'Your application is\nunder review',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -283,7 +283,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
 
                   Text(
                     "Our team is currently verifying your business details. This usually takes 24–48 business hours. We'll notify you once it's complete.",
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -331,7 +331,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
                           children: [
                             Text(
                               'Go to Dashboard',
-                              style: AppTypography.bodyLg(AppColors.primary).copyWith(
+                              style: AppTypography.bodyLg()(AppColors.primary).copyWith(
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -379,7 +379,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
                       children: [
                         Text(
                           'Business Summary',
-                          style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                          style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                           ),
@@ -431,7 +431,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
                                   
                                   Text(
                                     widget.businessName,
-                                    style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                                    style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -441,7 +441,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
                                   
                                   Text(
                                     '${widget.vendorType} • ${widget.businessCategory}',
-                                    style: AppTypography.body(AppColors.textSecondary),
+                                    style: AppTypography.body()(AppColors.textSecondary),
                                   ),
                                   
                                   const SizedBox(height: 8),
@@ -456,7 +456,7 @@ class _UnderReviewScreenState extends State<UnderReviewScreen>
                                       const SizedBox(width: 4),
                                       Text(
                                         'Address on file',
-                                        style: AppTypography.bodySm(AppColors.textMuted),
+                                        style: AppTypography.bodySm()(AppColors.textMuted),
                                       ),
                                     ],
                                   ),

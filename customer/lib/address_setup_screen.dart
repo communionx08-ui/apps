@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 
 class AddressSetupScreen extends StatefulWidget {
   final VoidCallback onNext;
@@ -103,7 +103,7 @@ class _AddressSetupScreenState extends State<AddressSetupScreen>
                     child: Text(
                       'Set Delivery Address',
                       textAlign: TextAlign.center,
-                      style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                      style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -139,7 +139,7 @@ class _AddressSetupScreenState extends State<AddressSetupScreen>
                   // Header with modern entrance animation
                   Text(
                     'Set Your Default\nDelivery Address',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontWeight: FontWeight.w700,
                       height: 1.2,
                     ),
@@ -152,7 +152,7 @@ class _AddressSetupScreenState extends State<AddressSetupScreen>
                   
                   Text(
                     'We\'ll use this address for all your deliveries',
-                    style: AppTypography.bodyLg(const Color(0xFF8A8A8E)).copyWith(
+                    style: AppTypography.bodyLg()(const Color(0xFF8A8A8E)).copyWith(
                       height: 1.6,
                     ),
                   )
@@ -196,14 +196,14 @@ class _AddressSetupScreenState extends State<AddressSetupScreen>
                             children: [
                               Text(
                                 'Use Current Location',
-                                style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+                                style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               const SizedBox(height: 4),
                               Text(
                                 'Automatically detect your location',
-                                style: AppTypography.body(const Color(0xFF8A8A8E)),
+                                style: AppTypography.body()(const Color(0xFF8A8A8E)),
                               ),
                             ],
                           ),
@@ -248,7 +248,7 @@ class _AddressSetupScreenState extends State<AddressSetupScreen>
                   // Address Type Selection
                   Text(
                     'Address Type',
-                    style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+                    style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   )
@@ -285,7 +285,7 @@ class _AddressSetupScreenState extends State<AddressSetupScreen>
                             ),
                             child: Text(
                               type,
-                              style: AppTypography.body(
+                              style: AppTypography.body()(
                                 isSelected
                                     ? Colors.white
                                     : const Color(0xFF64748B),
@@ -364,7 +364,7 @@ class _AddressSetupScreenState extends State<AddressSetupScreen>
       children: [
         Text(
           label,
-          style: AppTypography.body(AppColors.textPrimary).copyWith(
+          style: AppTypography.body()(AppColors.textPrimary).copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -384,12 +384,12 @@ class _AddressSetupScreenState extends State<AddressSetupScreen>
             controller: controller,
             maxLines: maxLines,
             readOnly: readOnly,
-            style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+            style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
               fontWeight: FontWeight.w500,
             ),
             decoration: InputDecoration(
               hintText: hint,
-              hintStyle: AppTypography.bodyLg(const Color(0xFFA2A0A8)),
+              hintStyle: AppTypography.bodyLg()(const Color(0xFFA2A0A8)),
               filled: true,
               fillColor: readOnly 
                   ? const Color(0xFFF9F9FA) 

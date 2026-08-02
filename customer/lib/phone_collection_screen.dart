@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'otp_verification_screen.dart';
 
 class PhoneCollectionScreen extends StatefulWidget {
@@ -175,7 +175,7 @@ class _PhoneCollectionScreenState extends State<PhoneCollectionScreen> {
                     // Description
                     Text.rich(
                       TextSpan(
-                        style: AppTypography.body(AppColors.textMuted).copyWith(
+                        style: AppTypography.body()(AppColors.textMuted).copyWith(
                           fontSize: 16,
                           height: 1.6,
                         ),
@@ -251,7 +251,7 @@ class _PhoneCollectionScreenState extends State<PhoneCollectionScreen> {
                           const SizedBox(width: 8),
                           Text(
                             '|',
-                            style: AppTypography.bodyLg(AppColors.textMuted),
+                            style: AppTypography.bodyLg()(AppColors.textMuted),
                           ),
                           const SizedBox(width: 12),
                           Expanded(
@@ -268,7 +268,7 @@ class _PhoneCollectionScreenState extends State<PhoneCollectionScreen> {
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'Phone number',
-                                hintStyle: AppTypography.bodyLg(AppColors.textMuted),
+                                hintStyle: AppTypography.bodyLg()(AppColors.textMuted),
                                 contentPadding: EdgeInsets.zero,
                               ),
                               onChanged: (_) {
@@ -296,7 +296,7 @@ class _PhoneCollectionScreenState extends State<PhoneCollectionScreen> {
                                 alignment: Alignment.centerLeft,
                                 child: Text(
                                   _phoneError!,
-                                  style: AppTypography.bodySm(AppColors.danger).copyWith(
+                                  style: AppTypography.bodySm()(AppColors.danger).copyWith(
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),

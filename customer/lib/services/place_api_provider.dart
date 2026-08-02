@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
-import '../models/place_models.dart';
 
 /// Provides Google Places API autocomplete and place details functionality.
 /// Adapted from Houzi's PlaceApiProvider with session token management.
@@ -28,8 +28,14 @@ class PlaceApiProvider {
   Future<List<Suggestion>> fetchSuggestions(String input) async {
     if (input.isEmpty) return [];
     
-    final request = 'https://maps.googleapis.com/maps/api/place/autocomplete/'
-        'json?input=$input&key=$_apiKey&sessiontoken=$sessionToken';
+    if (_apiKey.isEmpty) {
+      // Return mock suggestions if API key is not set to allow testing the UI
+      return [
+        Suggestion('1', 'Kumasi City Mall, Kumasi'),
+        Suggestion('2', 'Airport City, Accra'),
+        Suggestion('3', 'KNUST Campus, Kumasi'),
+      ].where((s) => s.description.toLowerCase().contains(input.toLowerCase())).toList();
+    }
 
     final dio = Dio()
       ..interceptors.add(DioCacheInterceptor(options: options));

@@ -1,5 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import '../motion/motion.dart';
+import '../services/haptic_service.dart';
 
 /// Universal press/scale micro-interaction. Wrap any tappable widget.
 ///

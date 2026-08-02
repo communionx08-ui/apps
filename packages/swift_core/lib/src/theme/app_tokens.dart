@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 /// Design tokens - spacing, radii, shadows, etc.
 class AppTokens {
   AppTokens._();
@@ -17,6 +18,21 @@ class AppTokens {
   static const double radiusSm = 8.0;
   static const double radiusMd = 12.0;
   static const double radiusLg = 16.0;
-  static const double radiusXl = 20.0;
+  static const double radiusXl = 24.0;
+  static const double radius2Xl = 32.0;
   static const double radiusRound = 999.0;
+
+  // Elevation / Shadows
+  static const double elevationNone = 0.0;
+  static const double elevationLow = 2.0;
+  static const double elevationMedium = 8.0;
+  static const double elevationHigh = 16.0;
+
+  // Animation / Motion durations
+  static const Duration durationFast = Duration(milliseconds: 200);
+  static const Duration durationMedium = Duration(milliseconds: 350);
+  static const Duration durationSlow = Duration(milliseconds: 500);
+
+  // Content Max Width (for readability)
+  static const double contentMaxWidth = 600.0;
 }

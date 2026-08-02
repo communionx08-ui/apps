@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'rider_document_upload_screen.dart';
 
 class RiderVehicleInformationScreen extends StatefulWidget {
@@ -43,7 +43,7 @@ class _RiderVehicleInformationScreenState extends State<RiderVehicleInformationS
         SnackBar(
           content: Text(
             'Please select a vehicle type',
-            style: AppTypography.body(Colors.white),
+            style: AppTypography.body()(Colors.white),
           ),
           backgroundColor: AppColors.danger,
           behavior: SnackBarBehavior.floating,
@@ -94,7 +94,7 @@ class _RiderVehicleInformationScreenState extends State<RiderVehicleInformationS
           SnackBar(
             content: Text(
               'Failed to save. Please try again.',
-              style: AppTypography.body(Colors.white),
+              style: AppTypography.body()(Colors.white),
             ),
             backgroundColor: AppColors.danger,
             behavior: SnackBarBehavior.floating,
@@ -136,7 +136,7 @@ class _RiderVehicleInformationScreenState extends State<RiderVehicleInformationS
             filled: true,
             fillColor: Colors.white,
             hintText: hintText,
-            hintStyle: AppTypography.body(AppColors.textMuted).copyWith(fontSize: 16),
+            hintStyle: AppTypography.body()(AppColors.textMuted).copyWith(fontSize: 16),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(color: AppColors.primary.withOpacity(0.2)),
@@ -193,7 +193,7 @@ class _RiderVehicleInformationScreenState extends State<RiderVehicleInformationS
                           child: Text(
                             'Rider Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -234,7 +234,7 @@ class _RiderVehicleInformationScreenState extends State<RiderVehicleInformationS
                       
                       Text(
                         'Vehicle Information',
-                        style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                        style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                           fontSize: 28,
                           fontWeight: FontWeight.w700,
                           height: 1.2,
@@ -248,7 +248,7 @@ class _RiderVehicleInformationScreenState extends State<RiderVehicleInformationS
                       
                       Text(
                         'Tell us about the vehicle you\'ll be using for deliveries.',
-                        style: AppTypography.body(AppColors.textSecondary).copyWith(
+                        style: AppTypography.body()(AppColors.textSecondary).copyWith(
                           fontSize: 16,
                           height: 1.5,
                         ),
@@ -415,7 +415,7 @@ class _RiderVehicleInformationScreenState extends State<RiderVehicleInformationS
                             Expanded(
                               child: Text(
                                 'Great choice! Bicycles don\'t require registration details. You\'re ready for the next step.',
-                                style: AppTypography.body(AppColors.primary).copyWith(
+                                style: AppTypography.body()(AppColors.primary).copyWith(
                                   fontWeight: FontWeight.w500,
                                   height: 1.4,
                                 ),

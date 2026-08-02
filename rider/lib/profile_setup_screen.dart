@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'terms_screen.dart';
 import 'location_permission_screen.dart';
 
@@ -89,7 +89,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
           SnackBar(
             content: Text(
               'Failed to save profile. Please try again.',
-              style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+              style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
             ),
             backgroundColor: AppColors.danger,
             behavior: SnackBarBehavior.floating,
@@ -115,7 +115,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
       children: [
         Text(
           label,
-          style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+          style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -125,12 +125,12 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
           keyboardType: keyboardType,
           readOnly: readOnly,
           validator: validator,
-          style: AppTypography.bodyLg(AppColors.textPrimary),
+          style: AppTypography.bodyLg()(AppColors.textPrimary),
           decoration: InputDecoration(
             filled: true,
             fillColor: readOnly ? const Color(0xFFF1F5F9) : Colors.white,
             hintText: hintText,
-            hintStyle: AppTypography.body(AppColors.textMuted),
+            hintStyle: AppTypography.body()(AppColors.textMuted),
             suffixIcon: suffix,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
@@ -192,7 +192,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                           child: Text(
                             'Rider Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -231,7 +231,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                       
                       Text(
                         'Complete your profile',
-                        style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                        style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                           fontSize: 28,
                           fontWeight: FontWeight.w700,
                           height: 1.2,
@@ -245,7 +245,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                       
                       Text(
                         'Set up your rider profile to start receiving delivery requests',
-                        style: AppTypography.body(AppColors.textSecondary).copyWith(
+                        style: AppTypography.body()(AppColors.textSecondary).copyWith(
                           fontSize: 16,
                           height: 1.5,
                         ),
@@ -285,7 +285,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                                     SnackBar(
                                       content: Text(
                                         'Photo upload coming soon!',
-                                        style: AppTypography.body(Colors.white),
+                                        style: AppTypography.body()(Colors.white),
                                       ),
                                       backgroundColor: AppColors.textPrimary,
                                       behavior: SnackBarBehavior.floating,
@@ -394,7 +394,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                       
                       Text(
                         'Add your email to receive delivery notifications',
-                        style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                        style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                           height: 1.5,
                         ),
                       )

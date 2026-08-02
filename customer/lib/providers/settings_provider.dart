@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// App preferences shown on the Settings screen. In-memory only (consistent

@@ -1,5 +1,5 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/voucher.dart';
 
 /// Available vouchers, browsable from the Vouchers screen and applicable at
 /// checkout. Previously checkout's promo field only accepted two codes that

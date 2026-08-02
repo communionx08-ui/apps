@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'restaurant_screen.dart';
 
 class FavouritesScreen extends StatefulWidget {

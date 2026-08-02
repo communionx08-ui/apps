@@ -1,9 +1,9 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:swift_core/swift_core.dart';
 import 'package:image/image.dart' as img;
 import 'rider_smileid_liveness_screen.dart';
 
@@ -72,18 +72,18 @@ class _RiderSmileIdSelfieScreenState extends State<RiderSmileIdSelfieScreen> {
       builder: (context) => AlertDialog(
         title: Text(
           'Camera Not Available on Web',
-          style: AppTypography.h2(AppColors.textPrimary),
+          style: AppTypography.h2()(AppColors.textPrimary),
         ),
         content: Text(
           'Image capture is not supported in web browsers. Would you like to use mock data for testing?',
-          style: AppTypography.body(AppColors.textSecondary),
+          style: AppTypography.body()(AppColors.textSecondary),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
               'Cancel',
-              style: AppTypography.body(AppColors.textSecondary),
+              style: AppTypography.body()(AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -97,7 +97,7 @@ class _RiderSmileIdSelfieScreenState extends State<RiderSmileIdSelfieScreen> {
             ),
             child: Text(
               'Use Mock Data',
-              style: AppTypography.body(Colors.white),
+              style: AppTypography.body()(Colors.white),
             ),
           ),
         ],
@@ -140,7 +140,7 @@ class _RiderSmileIdSelfieScreenState extends State<RiderSmileIdSelfieScreen> {
       SnackBar(
         content: Text(
           message,
-          style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+          style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
         ),
         backgroundColor: AppColors.danger,
         behavior: SnackBarBehavior.floating,
@@ -226,7 +226,7 @@ class _RiderSmileIdSelfieScreenState extends State<RiderSmileIdSelfieScreen> {
                           child: Text(
                             'Take a Selfie',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary)
+                            style: AppTypography.h2()(AppColors.textPrimary)
                                 .copyWith(fontWeight: FontWeight.w600),
                           ),
                         ),
@@ -264,7 +264,7 @@ class _RiderSmileIdSelfieScreenState extends State<RiderSmileIdSelfieScreen> {
                   
                   Text(
                     'Take a Selfie',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -282,7 +282,7 @@ class _RiderSmileIdSelfieScreenState extends State<RiderSmileIdSelfieScreen> {
                   
                   Text(
                     'Position your face inside the guide and tap capture.',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -334,7 +334,7 @@ class _RiderSmileIdSelfieScreenState extends State<RiderSmileIdSelfieScreen> {
                               const SizedBox(height: 24),
                               Text(
                                 'Centre your face',
-                                style: AppTypography.body(AppColors.textSecondary)
+                                style: AppTypography.body()(AppColors.textSecondary)
                                     .copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
@@ -383,7 +383,7 @@ class _RiderSmileIdSelfieScreenState extends State<RiderSmileIdSelfieScreen> {
                             const SizedBox(width: 8),
                             Text(
                               'Tips for a good selfie',
-                              style: AppTypography.body(AppColors.primary).copyWith(
+                              style: AppTypography.body()(AppColors.primary).copyWith(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w700,
                               ),
@@ -481,7 +481,7 @@ class _TipItem extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: AppTypography.body(AppColors.textSecondary).copyWith(
+              style: AppTypography.body()(AppColors.textSecondary).copyWith(
                 fontSize: 14,
                 height: 1.4,
               ),

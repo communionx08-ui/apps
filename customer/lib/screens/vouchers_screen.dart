@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/voucher.dart';
 import '../providers/voucher_provider.dart';
 
 const Color _primary = Color(0xFF0068FF);

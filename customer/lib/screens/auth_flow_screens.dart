@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // for LogicalKeyboardKey, KeyDownEvent
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async'; // for Timer
@@ -1078,7 +1078,7 @@ class _ConfirmDetailsScreenState extends State<ConfirmDetailsScreen> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: const Color(0xFFEEF2FF),
-                          border: Border.all(color: const Color(0xFF0068FF).withValues(alpha: 0.2), width: 2),
+                          border: Border.all(color: const Color(0xFF0068FF).withOpacity(0.2), width: 2),
                         ),
                         child: const Icon(Icons.person, size: 70, color: Color(0xFF0068FF)),
                       ),
@@ -1991,7 +1991,7 @@ class PasskeyScreen extends StatelessWidget {
 
 // ─── You Are All Set ──────────────────────────────────────────────────────────
 
-class AllSetScreen extends StatelessWidget {
+class _InternalAllSetScreen extends StatelessWidget {
   final VoidCallback onNext;
   const AllSetScreen({super.key, required this.onNext});
 
@@ -2203,7 +2203,7 @@ class _AuthFlowScreenState extends State<AuthFlowScreen> {
           step: 2,
         );
       case 11:
-        return AllSetScreen(
+        return _InternalAllSetScreen(
           key: const ValueKey(11),
           onNext: () { _handleComplete(); },
         );

@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'order_tracking_screen.dart';
-import '../models/order.dart';
 
 /// Shown right after checkout. All content is now driven by the real
 /// [Order] that was just placed (id, vendor, ETA, total) — previously this

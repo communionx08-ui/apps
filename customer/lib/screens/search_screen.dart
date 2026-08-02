@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'voice_search_screen.dart';
 import 'restaurant_screen.dart';
 import 'vendor_list_screen.dart';
@@ -17,62 +17,32 @@ class _SearchScreenState extends State<SearchScreen> {
 
   final List<String> _filters = ['All', 'Food', 'Groceries', 'Pharmacy', 'Shop', 'Market'];
 
-  final List<String> _recentSearches = ['Jollof Rice', 'KFC', 'Papaye', 'Pizza'];
+  final List<String> _recentSearches = ['Jollof Rice', 'Burger', 'Laptop', 'Bread'];
 
-  final List<Map<String, dynamic>> _dummyResults = [
-    {'title': 'Jollof Rice', 'type': 'Food', 'price': '₵45.00', 'icon': Icons.fastfood, 'vendor': 'Papaye Fast Food', 'subtitle': 'Papaye Fast Food'},
-    {'title': 'Waakye Special', 'type': 'Food', 'price': '₵32.00', 'icon': Icons.fastfood, 'vendor': 'Nana Konadu Joint', 'subtitle': 'Nana Konadu Joint'},
-    {'title': 'Fried Chicken Combo', 'type': 'Food', 'price': '₵68.00', 'icon': Icons.fastfood, 'vendor': 'Papaye Fast Food', 'subtitle': 'Papaye Fast Food'},
-    {'title': 'Fresh Tomatoes', 'type': 'Groceries', 'price': '₵12.00', 'icon': Icons.shopping_basket, 'subtitle': 'per bowl · Maxmart'},
-    {'title': 'Eggs (Tray of 30)', 'type': 'Groceries', 'price': '₵55.00', 'icon': Icons.shopping_basket, 'subtitle': 'per tray · Shoprite'},
-    {'title': 'Paracetamol 500mg', 'type': 'Pharmacy', 'price': '₵6.00', 'icon': Icons.medical_services, 'subtitle': 'No prescription · Ernest Chemists'},
-    {'title': 'Vitamin C 1000mg', 'type': 'Pharmacy', 'price': '₵25.00', 'icon': Icons.medical_services, 'subtitle': 'No prescription · Kinapharma'},
-    {'title': 'iPhone Clear Case', 'type': 'Shop', 'price': '₵45.00', 'icon': Icons.phone_android, 'subtitle': 'Tech Hub Ghana'},
-    {'title': 'Polo T-Shirt', 'type': 'Shop', 'price': '₵80.00', 'icon': Icons.checkroom, 'subtitle': 'Kantanka Fashion'},
-    {'title': 'Indomie (pack of 40)', 'type': 'Groceries', 'price': '₵65.00', 'icon': Icons.shopping_basket, 'subtitle': 'per pack · Melcom'},
-  ];
-
-  List<Map<String, dynamic>> get _filteredResults {
-    return _dummyResults.where((item) {
-      final matchesText = _searchController.text.isEmpty ||
-          item['title'].toString().toLowerCase().contains(_searchController.text.toLowerCase());
+  List<CatalogItem> get _filteredResults {
+    final catalog = CatalogService();
+    if (_searchController.text.isEmpty) return [];
+    
+    return catalog.search(_searchController.text).where((item) {
       final matchesFilter = _selectedFilter == 'All' ||
-          item['type'] == _selectedFilter;
-      return matchesText && matchesFilter;
+          item.vertical.label == _selectedFilter;
+      return matchesFilter;
     }).toList();
   }
 
-  void _navigateToResult(Map<String, dynamic> result) {
-    final type = result['type'] as String;
-    switch (type) {
-      case 'Food':
+  void _navigateToResult(CatalogItem result) {
+    if (result.vertical == ServiceType.food) {
         Navigator.push(context, MaterialPageRoute(
           builder: (_) => RestaurantScreen(restaurantData: {
-            'img': 'assets/images/home/story_papaye.png',
-            'name': result['vendor'] as String? ?? 'Restaurant',
-            'cat': 'Food',
+            'img': result.imageUrl,
+            'name': result.vendorName,
+            'cat': result.category,
             'time': '20-30 min',
             'fee': '₵12 Delivery',
             'rating': '4.6',
           }),
         ));
-        break;
-      case 'Groceries':
-        Navigator.push(context, MaterialPageRoute(
-          builder: (_) => const VendorListScreen(serviceType: ServiceType.groceries),
-        ));
-        break;
-      case 'Pharmacy':
-        Navigator.push(context, MaterialPageRoute(
-          builder: (_) => const VendorListScreen(serviceType: ServiceType.pharmacy),
-        ));
-        break;
-      case 'Shop':
-        Navigator.push(context, MaterialPageRoute(
-          builder: (_) => const VendorListScreen(serviceType: ServiceType.shop),
-        ));
-        break;
-      default:
+    } else {
         Navigator.push(context, MaterialPageRoute(
           builder: (_) => const VendorListScreen(serviceType: ServiceType.groceries),
         ));
@@ -290,9 +260,9 @@ class _SearchScreenState extends State<SearchScreen> {
       padding: const EdgeInsets.all(16),
       itemCount: results.length,
       itemBuilder: (context, index) {
-        final result = results[index];
+        final item = results[index];
         return GestureDetector(
-          onTap: () => _navigateToResult(result),
+          onTap: () => _navigateToResult(item),
           child: Container(
             margin: const EdgeInsets.only(bottom: 16),
             padding: const EdgeInsets.all(12),
@@ -305,12 +275,15 @@ class _SearchScreenState extends State<SearchScreen> {
             child: Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(12),
+                  width: 60,
+                  height: 60,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF1F5F9),
                     borderRadius: BorderRadius.circular(12),
+                    image: DecorationImage(
+                      image: NetworkImage(item.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  child: Icon(result['icon'] as IconData, color: const Color(0xFF0068FF)),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -318,7 +291,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        result['title'] as String,
+                        item.title,
                         style: AppFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -327,22 +300,22 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        result['type'] as String,
+                        item.vendorName,
                         style: AppFonts.inter(
                           fontSize: 12,
-                          color: const Color(0xFF64748B),
+                          color: const Color(0xFF0068FF),
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
-                      if ((result['subtitle'] as String? ?? '').isNotEmpty)
-                        Text(
-                          result['subtitle'] as String,
-                          style: AppFonts.inter(fontSize: 11, color: const Color(0xFF94A3B8)),
-                        ),
+                      Text(
+                        item.category,
+                        style: AppFonts.inter(fontSize: 11, color: const Color(0xFF94A3B8)),
+                      ),
                     ],
                   ),
                 ),
                 Text(
-                  result['price'] as String,
+                  '₵${item.price.toStringAsFixed(2)}',
                   style: AppFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w800,

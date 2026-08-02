@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/store_status_provider.dart';
-import '../widgets/store_status_badge.dart';
 import 'vendor_store_screen.dart';
 
 class LaundryVendorsScreen extends ConsumerStatefulWidget {
@@ -56,6 +55,17 @@ class _LaundryVendorsScreenState extends ConsumerState<LaundryVendorsScreen> {
       turnaround: '3-4 days',
       priceFrom: '₵3/item',
       imageUrl: 'https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&q=80&w=600',
+      isFavorite: false,
+    ),
+    _VendorData(
+      name: 'White Cloud Cleaners',
+      services: 'Eco-friendly Wash • Wedding Dresses',
+      rating: '4.8',
+      reviews: '45+',
+      distance: '5.2 km',
+      turnaround: '5 days',
+      priceFrom: '₵25/item',
+      imageUrl: 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=600',
       isFavorite: false,
     ),
   ];
@@ -141,7 +151,7 @@ class _LaundryVendorsScreenState extends ConsumerState<LaundryVendorsScreen> {
                             boxShadow: isActive
                                 ? [
                                     BoxShadow(
-                                      color: const Color(0xFF0068FF).withValues(alpha: 0.2),
+                                      color: const Color(0xFF0068FF).withOpacity(0.2),
                                       blurRadius: 6,
                                       offset: const Offset(0, 2),
                                     )
@@ -307,7 +317,7 @@ class _LaundryVendorsScreenState extends ConsumerState<LaundryVendorsScreen> {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.9),
+                        color: Colors.white.withOpacity(0.9),
                         shape: BoxShape.circle,
                         boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4)],
                       ),

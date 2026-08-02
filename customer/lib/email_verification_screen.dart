@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'dart:async';
 import 'phone_collection_screen.dart';
 
@@ -206,7 +206,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen>
           SnackBar(
             content: Text(
               'Verification code sent to ${widget.email}!',
-              style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+              style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
             ),
             backgroundColor: AppColors.success,
             behavior: SnackBarBehavior.floating,
@@ -221,7 +221,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen>
           SnackBar(
             content: Text(
               'Failed to resend code. Please try again.',
-              style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+              style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
             ),
             backgroundColor: AppColors.danger,
             behavior: SnackBarBehavior.floating,
@@ -291,7 +291,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen>
               // Subtitle with email
               RichText(
                 text: TextSpan(
-                  style: AppTypography.body(AppColors.textMuted).copyWith(
+                  style: AppTypography.body()(AppColors.textMuted).copyWith(
                     fontSize: 16,
                     height: 1.5,
                   ),
@@ -400,7 +400,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen>
                     ),
                     child: Text(
                       _errorMessage,
-                      style: AppTypography.bodySm(AppColors.danger).copyWith(
+                      style: AppTypography.bodySm()(AppColors.danger).copyWith(
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -417,7 +417,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen>
                     if (_secondsLeft > 0) ...[
                       Text(
                         'Resend code in $_formatTime',
-                        style: AppTypography.body(AppColors.textMuted).copyWith(
+                        style: AppTypography.body()(AppColors.textMuted).copyWith(
                           fontSize: 15,
                         ),
                       ),
@@ -441,7 +441,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen>
                               const SizedBox(width: 8),
                               Text(
                                 'Resend Code',
-                                style: AppTypography.body(AppColors.primary).copyWith(
+                                style: AppTypography.body()(AppColors.primary).copyWith(
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -481,7 +481,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen>
                 child: Text(
                   'Didn\'t receive a code? Check your spam folder.',
                   textAlign: TextAlign.center,
-                  style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                  style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                     height: 1.5,
                   ),
                 ),

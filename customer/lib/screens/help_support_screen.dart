@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swift_core/swift_core.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ---------------------------------------------------------------------------
@@ -566,7 +566,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.2),
+              color: Colors.white.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Icon(Icons.headset_mic_outlined, color: Colors.white, size: 22),
@@ -579,7 +579,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
           const SizedBox(height: 4),
           Text(
             'Find answers to common questions about Swift',
-            style: AppFonts.inter(fontSize: 13, color: Colors.white.withValues(alpha: 0.8)),
+            style: AppFonts.inter(fontSize: 13, color: Colors.white.withOpacity(0.8)),
           ),
         ],
       ),
@@ -637,7 +637,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.2),
+                  color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: const Icon(Icons.support_agent, color: Colors.white, size: 22),
@@ -650,7 +650,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
               const SizedBox(height: 4),
               Text(
                 'Our team is available 24/7 to help you',
-                style: AppFonts.inter(fontSize: 13, color: Colors.white.withValues(alpha: 0.8)),
+                style: AppFonts.inter(fontSize: 13, color: Colors.white.withOpacity(0.8)),
               ),
             ],
           ),

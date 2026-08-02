@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:async';
 import 'dart:typed_data';
 

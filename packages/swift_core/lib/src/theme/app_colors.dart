@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 
 /// Swift brand palette.
@@ -35,6 +36,7 @@ class AppColors {
   static const Color textSecondary = Color(0xFF64748B);
   static const Color textMuted = Color(0xFF94A3B8);
   static const Color border = Color(0xFFE2E8F0);
+  static const Color borderLight = Color(0xFFF1F5F9);
   static const Color divider = Color(0xFFF1F5F9);
   static const Color background = Color(0xFFF8FAFC);
   static const Color surface = Colors.white;

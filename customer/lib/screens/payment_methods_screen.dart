@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/payment_method.dart';
 import '../providers/payment_methods_provider.dart';
-import '../widgets/add_payment_method_modal.dart';
 
 const Color _primary = Color(0xFF0068FF);
 const Color _dark = Color(0xFF0F172A);

@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'all_set_screen.dart';
 
 class NotificationPermissionScreen extends StatefulWidget {
@@ -98,7 +98,7 @@ class _NotificationPermissionScreenState extends State<NotificationPermissionScr
           SnackBar(
             content: Text(
               'Notifications disabled. You can enable them later in settings.',
-              style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+              style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
             ),
             backgroundColor: AppColors.textPrimary,
             behavior: SnackBarBehavior.floating,
@@ -281,7 +281,7 @@ class _NotificationPermissionScreenState extends State<NotificationPermissionScr
                                 child: Center(
                                   child: Text(
                                     '3',
-                                    style: AppTypography.bodySm(Colors.white).copyWith(
+                                    style: AppTypography.bodySm()(Colors.white).copyWith(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 12,
                                     ),
@@ -330,7 +330,7 @@ class _NotificationPermissionScreenState extends State<NotificationPermissionScr
                     Text(
                       'Get notified about your order status, special offers, and new restaurants in your area. You can customize these settings later.',
                       textAlign: TextAlign.center,
-                      style: AppTypography.body(AppColors.textMuted).copyWith(
+                      style: AppTypography.body()(AppColors.textMuted).copyWith(
                         fontSize: 16,
                         height: 1.6,
                       ),
@@ -392,7 +392,7 @@ class _NotificationPermissionScreenState extends State<NotificationPermissionScr
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         child: Text(
                           'Skip for now',
-                          style: AppTypography.body(AppColors.textMuted).copyWith(
+                          style: AppTypography.body()(AppColors.textMuted).copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -449,7 +449,7 @@ class _NotificationPermissionScreenState extends State<NotificationPermissionScr
               const SizedBox(height: 2),
               Text(
                 subtitle,
-                style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                   height: 1.3,
                 ),
               ),

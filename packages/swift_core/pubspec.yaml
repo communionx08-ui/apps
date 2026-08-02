@@ -1,30 +1,34 @@
 name: swift_core
-description: Shared models, theme, widgets, networking and motion primitives for the Swift super-app (customer / vendor / rider).
+description: Shared models, theme, widgets, networking and motion primitives for the Swift super-app.
 publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.11.1
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  flutter_riverpod: ^3.3.2
+  flutter_riverpod: ^2.5.1
   dio: ^5.7.0
   dio_cache_interceptor: ^3.5.0
   shared_preferences: ^2.5.3
-  intl: ^0.20.2
+  intl: ^0.19.0
   uuid: ^4.5.1
   cached_network_image: ^3.4.1
   shimmer: ^3.0.0
   connectivity_plus: ^6.1.0
   flutter_animate: ^4.5.2
+  geolocator: ^12.0.0
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  lucide_icons_flutter: ^1.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true

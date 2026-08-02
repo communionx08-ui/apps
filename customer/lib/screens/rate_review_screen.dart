@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import '../models/review.dart';
 import '../providers/reviews_provider.dart';
 import '../providers/wallet_provider.dart';
 
@@ -488,7 +487,7 @@ class _RateReviewScreenState extends ConsumerState<RateReviewScreen> {
                 onPressed: _isSubmitting ? null : _onSubmit,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF0068FF),
-                  disabledBackgroundColor: const Color(0xFF0068FF).withValues(alpha: 0.5),
+                  disabledBackgroundColor: const Color(0xFF0068FF).withOpacity(0.5),
                   foregroundColor: Colors.white,
                   elevation: 0,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),

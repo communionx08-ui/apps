@@ -1,14 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'order_confirmation_screen.dart';
-import '../models/order.dart';
 import '../providers/active_order_provider.dart';
 import '../providers/order_history_provider.dart';
 import '../providers/voucher_provider.dart';
 import '../providers/wallet_provider.dart';
-import '../widgets/address_modal.dart';
-import '../widgets/schedule_order_modal.dart';
 import '../services/order_simulation_service.dart';
 
 // ── Colour tokens ──────────────────────────────────────────────────────────────────────────────────────────
@@ -68,6 +65,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
   final TextEditingController _deliveryNoteCtrl = TextEditingController();
   bool _leaveAtDoor = false;
   DateTime? _scheduledFor;
+  SubstitutionPreference _substitutionPreference = SubstitutionPreference.replaceWithBestMatch;
 
   // "Send to someone" (gift) — lets the orderer deliver to a different
   // recipient than themselves.
@@ -93,6 +91,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
   bool get _isShop => widget.serviceType == ServiceType.shop;
   bool get _isLaundry => widget.serviceType == ServiceType.laundry;
   bool get _isPharmacy => widget.serviceType == ServiceType.pharmacy;
+  bool get _isGroceryOrMarket => widget.serviceType == ServiceType.groceries || widget.serviceType == ServiceType.market;
   // Laundry has 2 trips = 2× delivery fee
   double get _deliveryFee => widget.cartItems.isEmpty ? 0 : (_isLaundry ? 5.00 : 5.00);
   double get _returnDeliveryFee => _isLaundry ? 5.00 : 0;
@@ -200,7 +199,10 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
 
     final order = Order(
       id: OrderIdGenerator.next(widget.serviceType),
+      customerId: 'USER_123',
       serviceType: widget.serviceType,
+      status: OrderStatus.created,
+      createdAt: DateTime.now(),
       items: widget.cartItems.map((raw) {
         final item = _extractItem(raw);
         return OrderLineItem(
@@ -209,30 +211,24 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
           unitPrice: item['price'] as double,
           quantity: item['qty'] as int,
           imageUrl: item['imageUrl'] as String?,
+          size: item['size'] as String?,
+          color: item['color'] as String?,
         );
       }).toList(),
       subtotal: widget.subtotal,
       deliveryFee: _deliveryFee,
-      returnDeliveryFee: _returnDeliveryFee,
       serviceFee: _serviceFee,
       discount: _discount,
       total: _grandTotal,
       paymentMethod: _selectedPayment,
-      address: _address,
-      vendorName: _effectiveVendorName,
-      specialInstructions: _deliveryNoteCtrl.text.trim().isEmpty
-          ? widget.specialInstructions
-          : [
-              if (widget.specialInstructions != null) widget.specialInstructions!,
-              _deliveryNoteCtrl.text.trim(),
-            ].join(' · '),
-      placedAt: DateTime.now(),
-      eta: widget.serviceType.defaultEta,
-      scheduledFor: _scheduledFor,
-      leaveAtDoor: _leaveAtDoor,
-      recipientName: _isGift ? _recipientNameCtrl.text.trim() : null,
+      pickupAddress: 'Vendor Address', // In real app, from vendor model
+      dropoffAddress: _address.street,
+      senderName: _effectiveVendorName,
+      recipientName: _isGift ? _recipientNameCtrl.text.trim() : 'Swift User',
       recipientPhone: _isGift ? _recipientPhoneCtrl.text.trim() : null,
-      giftMessage: _isGift && _giftMessageCtrl.text.trim().isNotEmpty ? _giftMessageCtrl.text.trim() : null,
+      prescriptionImageUrl: _prescriptionImagePath,
+      substitutionPreference: _isGroceryOrMarket ? _substitutionPreference : null,
+      estimatedWeight: _isLaundry ? (widget.subtotal / 10.0) : null, // Mock estimation
     );
 
     if (_selectedPayment == 'Swift Wallet') {
@@ -409,6 +405,15 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
                       _buildPrescriptionUpload(),
                     ]),
                   if (_isPharmacy) const SizedBox(height: 14),
+
+                  if (_isGroceryOrMarket)
+                    _buildSectionCard(children: [
+                      _buildSectionTitle('Substitution Preference', icon: Icons.swap_horiz_rounded, iconColor: const Color(0xFF16A34A)),
+                      const SizedBox(height: 12),
+                      _buildSubstitutionSelector(),
+                    ]),
+                  if (_isGroceryOrMarket) const SizedBox(height: 14),
+
                   _buildSectionCard(children: [
                     _buildSectionTitle(
                       'Order Summary',
@@ -1177,6 +1182,37 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildSubstitutionSelector() {
+    return Column(
+      children: SubstitutionPreference.values.map((pref) {
+        final bool selected = _substitutionPreference == pref;
+        return GestureDetector(
+          onTap: () => setState(() => _substitutionPreference = pref),
+          child: Container(
+            margin: const EdgeInsets.only(bottom: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            decoration: BoxDecoration(
+              color: selected ? const Color(0xFFF0FDF4) : _light,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: selected ? const Color(0xFF16A34A) : _border),
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  selected ? Icons.check_circle_rounded : Icons.radio_button_off_rounded,
+                  color: selected ? const Color(0xFF16A34A) : _mid,
+                  size: 20,
+                ),
+                const SizedBox(width: 12),
+                Text(pref.label, style: AppFonts.inter(fontSize: 14, fontWeight: selected ? FontWeight.w600 : FontWeight.w500)),
+              ],
+            ),
+          ),
+        );
+      }).toList(),
     );
   }
 

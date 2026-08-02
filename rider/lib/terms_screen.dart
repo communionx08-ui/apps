@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 
 class TermsScreen extends StatefulWidget {
   final VoidCallback onAccept;
@@ -69,7 +69,7 @@ class _TermsScreenState extends State<TermsScreen>
                     child: Text(
                       'Terms & Privacy',
                       textAlign: TextAlign.center,
-                      style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                      style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -108,10 +108,10 @@ class _TermsScreenState extends State<TermsScreen>
               indicatorWeight: 2.5,
               labelColor: AppColors.primary,
               unselectedLabelColor: const Color(0xFF64748B),
-              labelStyle: AppTypography.body(AppColors.primary).copyWith(
+              labelStyle: AppTypography.body()(AppColors.primary).copyWith(
                 fontWeight: FontWeight.w600,
               ),
-              unselectedLabelStyle: AppTypography.body(const Color(0xFF64748B)).copyWith(
+              unselectedLabelStyle: AppTypography.body()(const Color(0xFF64748B)).copyWith(
                 fontWeight: FontWeight.w400,
               ),
               tabs: const [
@@ -201,7 +201,7 @@ class _TermsScreenState extends State<TermsScreen>
           Expanded(
             child: Text(
               label,
-              style: AppTypography.body(AppColors.textPrimary).copyWith(
+              style: AppTypography.body()(AppColors.textPrimary).copyWith(
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -304,14 +304,14 @@ class _TermsScreenState extends State<TermsScreen>
               children: [
                 Text(
                   section.title,
-                  style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+                  style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   section.body,
-                  style: AppTypography.body(const Color(0xFF64748B)).copyWith(
+                  style: AppTypography.body()(const Color(0xFF64748B)).copyWith(
                     height: 1.6,
                   ),
                 ),
@@ -327,7 +327,7 @@ class _TermsScreenState extends State<TermsScreen>
           Center(
             child: Text(
               'Last updated: January 2025',
-              style: AppTypography.bodySm(const Color(0xFF94A3B8)),
+              style: AppTypography.bodySm()(const Color(0xFF94A3B8)),
             ),
           ),
         ],

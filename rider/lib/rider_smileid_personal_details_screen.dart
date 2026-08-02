@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'rider_smileid_document_capture_screen.dart';
 
 class RiderSmileIdPersonalDetailsScreen extends StatefulWidget {
@@ -109,7 +109,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                           child: Text(
                             'Identity Verification',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary)
+                            style: AppTypography.h2()(AppColors.textPrimary)
                                 .copyWith(
                               fontWeight: FontWeight.w600,
                             ),
@@ -154,7 +154,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                     // Header
                     Text(
                       'Personal Details',
-                      style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                      style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                         fontSize: 28,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -175,7 +175,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                     
                     Text(
                       'Enter your details exactly as they appear on your document.',
-                      style: AppTypography.body(AppColors.textSecondary).copyWith(
+                      style: AppTypography.body()(AppColors.textSecondary).copyWith(
                         fontSize: 16,
                         height: 1.5,
                       ),
@@ -218,7 +218,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                               children: [
                                 Text(
                                   'Important',
-                                  style: AppTypography.body(AppColors.warning)
+                                  style: AppTypography.body()(AppColors.warning)
                                       .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w700,
@@ -228,7 +228,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                                 Text(
                                   'Enter your name EXACTLY as it appears on your ID. SmileID will verify that it matches.',
                                   style:
-                                      AppTypography.body(AppColors.textSecondary)
+                                      AppTypography.body()(AppColors.textSecondary)
                                           .copyWith(
                                     fontSize: 14,
                                     height: 1.4,
@@ -278,7 +278,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                             filled: true,
                             fillColor: Colors.white,
                             hintText: 'e.g. Kwame Asante',
-                            hintStyle: AppTypography.body(AppColors.textMuted)
+                            hintStyle: AppTypography.body()(AppColors.textMuted)
                                 .copyWith(fontSize: 16),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
@@ -334,7 +334,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                             filled: true,
                             fillColor: Colors.white,
                             hintText: 'e.g. Mensah',
-                            hintStyle: AppTypography.body(AppColors.textMuted)
+                            hintStyle: AppTypography.body()(AppColors.textMuted)
                                 .copyWith(fontSize: 16),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
@@ -395,7 +395,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                             filled: true,
                             fillColor: Colors.white,
                             hintText: 'e.g. kwame@example.com',
-                            hintStyle: AppTypography.body(AppColors.textMuted)
+                            hintStyle: AppTypography.body()(AppColors.textMuted)
                                 .copyWith(fontSize: 16),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
@@ -492,7 +492,7 @@ class _RiderSmileIdPersonalDetailsScreenState
                           Expanded(
                             child: Text(
                               'SmileID will capture photos of your document and verify your identity in real-time.',
-                              style: AppTypography.body(AppColors.textSecondary)
+                              style: AppTypography.body()(AppColors.textSecondary)
                                   .copyWith(
                                 fontSize: 14,
                                 height: 1.4,

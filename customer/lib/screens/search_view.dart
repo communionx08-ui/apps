@@ -1,8 +1,8 @@
+import 'package:swift_core/swift_core.dart';
 // Faithful port of FoodKing's search_view.dart
 // GetX -> StatefulWidget, flutter_screenutil -> native sizing,
 // get_storage -> local state, network images -> local assets
 import 'package:flutter/material.dart';
-import 'package:swift_core/swift_core.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:shimmer/shimmer.dart';
 

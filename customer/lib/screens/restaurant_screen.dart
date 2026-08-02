@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/food_item.dart';
 import '../providers/store_status_provider.dart';
-import '../widgets/store_status_badge.dart';
 import 'food_detail_screen.dart';
 
 class RestaurantScreen extends ConsumerStatefulWidget {
@@ -79,7 +77,7 @@ class _RestaurantScreenState extends ConsumerState<RestaurantScreen> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Colors.black.withValues(alpha: 0.4),
+                            Colors.black.withOpacity(0.4),
                             Colors.transparent,
                           ],
                         ),

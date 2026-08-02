@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:swift_core/swift_core.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'onboarding_screen.dart';
 
@@ -183,7 +183,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                         const SizedBox(height: 24),
                         Text(
                           'swift',
-                          style: AppTypography.h1(Colors.white).copyWith(
+                          style: AppTypography.h1()(Colors.white).copyWith(
                             fontSize: 48,
                             fontWeight: FontWeight.w800,
                             letterSpacing: -1,
@@ -195,7 +195,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                         const SizedBox(height: 8),
                         Text(
                           'Delivered fast.',
-                          style: AppTypography.bodyLg(Colors.white70),
+                          style: AppTypography.bodyLg()(Colors.white70),
                         ).animate()
                           .fadeIn(delay: 400.ms, duration: 500.ms, curve: Curves.easeOut)
                           .slideY(begin: 0.2, end: 0, delay: 400.ms, duration: 500.ms, curve: Curves.easeOutCubic),

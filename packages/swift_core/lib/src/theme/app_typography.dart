@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 
 /// Typography tokens for the Swift Inter-based type system.
@@ -79,4 +80,10 @@ class AppTypography {
         color: c,
         letterSpacing: 0.2,
       );
+
+  // Compatibility aliases
+  static TextStyle headlineSmall([Color c = const Color(0xFF0F172A)]) => h3(c);
+  static TextStyle headlineMedium([Color c = const Color(0xFF0F172A)]) => h2(c);
+  static TextStyle bodyLarge([Color c = const Color(0xFF0F172A)]) => bodyLg(c);
+  static TextStyle bodyMedium([Color c = const Color(0xFF0F172A)]) => body(c);
 }

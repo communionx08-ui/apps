@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/address.dart';
-import '../models/order.dart';
 import '../providers/active_order_provider.dart';
 import '../providers/order_history_provider.dart';
 import 'order_confirmation_screen.dart';
@@ -71,8 +69,7 @@ class _QueueServicesScreenState extends ConsumerState<QueueServicesScreen> {
     setState(() => _isSubmitting = false);
 
     final serviceLabel = _services[_selectedService]['label'] as String;
-    final order = Order(
-      id: OrderIdGenerator.next(ServiceType.queue),
+    final order = Order(id: 'LEGACY', serviceType: ServiceType.food),
       serviceType: ServiceType.queue,
       items: [
         OrderLineItem(
@@ -97,15 +94,8 @@ class _QueueServicesScreenState extends ConsumerState<QueueServicesScreen> {
       placedAt: DateTime.now(),
       eta: ServiceType.queue.defaultEta,
     );
-    ref.read(orderHistoryProvider.notifier).placeOrder(order);
-    ref.read(activeOrderProvider.notifier).setOrder(
-      ActiveOrder(
-        orderId: order.id,
-        serviceType: order.serviceType,
-        statusMessage: order.serviceType.defaultStatusMessage,
-        vendorName: order.vendorName,
-        eta: order.eta,
-      ),
+    ref.read(orderHistoryProvider.notifier).placeOrder(id: 'LEGACY', serviceType: ServiceType.food);
+    ref.read(activeOrderProvider.notifier).setOrder(id: 'LEGACY', serviceType: ServiceType.food),
     );
 
     OrderSimulationService.start(ref: ref, context: context, order: order);
@@ -364,7 +354,7 @@ class _QueueServicesScreenState extends ConsumerState<QueueServicesScreen> {
                   decoration: BoxDecoration(
                     color: const Color(0xFFEFF6FF),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: const Color(0xFF0068FF).withValues(alpha: 0.3), width: 1.5),
+                    border: Border.all(color: const Color(0xFF0068FF).withOpacity(0.3), width: 1.5),
                   ),
                   child: Column(
                     children: [
@@ -426,7 +416,7 @@ class _QueueServicesScreenState extends ConsumerState<QueueServicesScreen> {
                         onPressed: _isSubmitting ? null : _onSubmit,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF0068FF),
-                          disabledBackgroundColor: const Color(0xFF0068FF).withValues(alpha: 0.5),
+                          disabledBackgroundColor: const Color(0xFF0068FF).withOpacity(0.5),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                           elevation: 0,
                         ),

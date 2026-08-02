@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'parcel_details_screen.dart';
 import 'help_support_screen.dart';
 
@@ -183,7 +183,7 @@ class _ParcelSelectionScreenState extends State<ParcelSelectionScreen> {
                             width: 48,
                             height: 48,
                             decoration: BoxDecoration(
-                              color: (cat['color'] as Color).withValues(alpha: 0.1),
+                              color: (cat['color'] as Color).withOpacity(0.1),
                               borderRadius: BorderRadius.circular(16),
                             ),
                             child: Icon(cat['icon'], color: cat['color']),

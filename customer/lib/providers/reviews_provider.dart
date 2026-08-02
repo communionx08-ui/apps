@@ -1,5 +1,5 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/review.dart';
 
 /// Reviews the current user has written. Powers "My Reviews" in Profile and
 /// is merged into a vendor's public review list so a review you just wrote

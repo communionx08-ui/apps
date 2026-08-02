@@ -1,8 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/cart_item.dart';
 
 // Re-export so existing screens that import this file still get CartItem.
-export '../models/cart_item.dart';
 
 class FoodCartNotifier extends Notifier<List<CartItem>> {
   @override

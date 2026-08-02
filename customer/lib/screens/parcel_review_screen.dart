@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
-import '../models/cart_item.dart';
+import 'package:flutter/material.dart';
 import 'checkout_screen.dart';
 
 class ParcelReviewScreen extends StatelessWidget {

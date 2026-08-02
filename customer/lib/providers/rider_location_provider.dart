@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:latlong2/latlong.dart';

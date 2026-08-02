@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 class AppConstants {
   AppConstants._();
 

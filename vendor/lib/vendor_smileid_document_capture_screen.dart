@@ -1,9 +1,9 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:swift_core/swift_core.dart';
 import 'package:image/image.dart' as img;
 import 'vendor_smileid_selfie_screen.dart';
 
@@ -106,18 +106,18 @@ class _VendorSmileIdDocumentCaptureScreenState
       builder: (context) => AlertDialog(
         title: Text(
           'Camera Not Available on Web',
-          style: AppTypography.h2(AppColors.textPrimary),
+          style: AppTypography.h2()(AppColors.textPrimary),
         ),
         content: Text(
           'Image capture is not supported in web browsers. Would you like to use mock data for testing?',
-          style: AppTypography.body(AppColors.textSecondary),
+          style: AppTypography.body()(AppColors.textSecondary),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
               'Cancel',
-              style: AppTypography.body(AppColors.textSecondary),
+              style: AppTypography.body()(AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -131,7 +131,7 @@ class _VendorSmileIdDocumentCaptureScreenState
             ),
             child: Text(
               'Use Mock Data',
-              style: AppTypography.body(Colors.white),
+              style: AppTypography.body()(Colors.white),
             ),
           ),
         ],
@@ -181,7 +181,7 @@ class _VendorSmileIdDocumentCaptureScreenState
       SnackBar(
         content: Text(
           message,
-          style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+          style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
         ),
         backgroundColor: AppColors.danger,
         behavior: SnackBarBehavior.floating,
@@ -269,7 +269,7 @@ class _VendorSmileIdDocumentCaptureScreenState
                           child: Text(
                             'Document Capture',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary)
+                            style: AppTypography.h2()(AppColors.textPrimary)
                                 .copyWith(fontWeight: FontWeight.w600),
                           ),
                         ),
@@ -307,7 +307,7 @@ class _VendorSmileIdDocumentCaptureScreenState
                   
                   Text(
                     'Document Photos',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -325,7 +325,7 @@ class _VendorSmileIdDocumentCaptureScreenState
                   
                   Text(
                     'Place your document on a flat surface with good lighting.',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -527,7 +527,7 @@ class _UploadZone extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 sublabel,
-                style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                   fontSize: 12,
                 ),
                 textAlign: TextAlign.center,

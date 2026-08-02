@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:swift_core/swift_core.dart';
 import 'get_started_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -130,7 +130,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                   onPressed: _finish,
                   child: Text(
                     'Skip',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
@@ -304,7 +304,7 @@ class _PageView extends StatelessWidget {
             Text(
               page.subtitle,
               textAlign: TextAlign.center,
-              style: AppTypography.body(AppColors.textSecondary).copyWith(
+              style: AppTypography.body()(AppColors.textSecondary).copyWith(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
                 height: 1.6,

@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

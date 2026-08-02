@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'owner_information_screen.dart';
 
 class BusinessLocationScreen extends StatefulWidget {
@@ -61,7 +61,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
         SnackBar(
           content: Text(
             'Location detected successfully!',
-            style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+            style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
           ),
           backgroundColor: AppColors.success,
           behavior: SnackBarBehavior.floating,
@@ -154,7 +154,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                           child: Text(
                             'Vendor Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -195,7 +195,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                   // Header with modern entrance animation
                   Text(
                     'Where is your business\nlocated?',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -209,7 +209,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                   
                   Text(
                     'This helps customers find you and ensures accurate delivery',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -267,7 +267,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                           // Title & subtitle
                           Text(
                             _isAutoDetecting ? 'Detecting Location...' : 'Auto-Detect Location',
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
                             ),
@@ -278,7 +278,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                             _isAutoDetecting
                                 ? 'Please wait while we detect your business location'
                                 : 'For best results, stand at your business location and tap the button below',
-                            style: AppTypography.body(AppColors.textSecondary).copyWith(
+                            style: AppTypography.body()(AppColors.textSecondary).copyWith(
                               height: 1.4,
                             ),
                             textAlign: TextAlign.center,
@@ -306,7 +306,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                             },
                             child: Text(
                               'Enter address manually instead',
-                              style: AppTypography.bodyLg(AppColors.primary).copyWith(
+                              style: AppTypography.bodyLg()(AppColors.primary).copyWith(
                                 fontWeight: FontWeight.w500,
                                 decoration: TextDecoration.underline,
                               ),
@@ -341,7 +341,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                           Expanded(
                             child: Text(
                               'Location detected successfully! You can review and edit the details below.',
-                              style: AppTypography.bodyLg(AppColors.success).copyWith(
+                              style: AppTypography.bodyLg()(AppColors.success).copyWith(
                                 fontWeight: FontWeight.w500,
                                 height: 1.4,
                               ),
@@ -364,10 +364,10 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                             label: 'Region',
                             child: DropdownButtonFormField<String>(
                               value: _selectedRegion,
-                              style: AppTypography.bodyLg(AppColors.textPrimary),
+                              style: AppTypography.bodyLg()(AppColors.textPrimary),
                               decoration: InputDecoration(
                                 hintText: 'Select region',
-                                hintStyle: AppTypography.body(AppColors.textMuted),
+                                hintStyle: AppTypography.body()(AppColors.textMuted),
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
@@ -415,10 +415,10 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                             label: 'City / Town',
                             child: DropdownButtonFormField<String>(
                               value: _selectedCity,
-                              style: AppTypography.bodyLg(AppColors.textPrimary),
+                              style: AppTypography.bodyLg()(AppColors.textPrimary),
                               decoration: InputDecoration(
                                 hintText: 'Select city',
-                                hintStyle: AppTypography.body(AppColors.textMuted),
+                                hintStyle: AppTypography.body()(AppColors.textMuted),
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
@@ -457,10 +457,10 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                       label: 'Street Address',
                       child: TextFormField(
                         controller: _streetAddressCtrl,
-                        style: AppTypography.bodyLg(AppColors.textPrimary),
+                        style: AppTypography.bodyLg()(AppColors.textPrimary),
                         decoration: InputDecoration(
                           hintText: 'House number or street name',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
@@ -490,10 +490,10 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                             label: 'Landmark',
                             child: TextFormField(
                               controller: _landmarkCtrl,
-                              style: AppTypography.bodyLg(AppColors.textPrimary),
+                              style: AppTypography.bodyLg()(AppColors.textPrimary),
                               decoration: InputDecoration(
                                 hintText: 'Near major building',
-                                hintStyle: AppTypography.body(AppColors.textMuted),
+                                hintStyle: AppTypography.body()(AppColors.textMuted),
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
@@ -520,10 +520,10 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                             label: 'Digital Address (GPS)',
                             child: TextFormField(
                               controller: _digitalAddressCtrl,
-                              style: AppTypography.bodyLg(AppColors.textPrimary),
+                              style: AppTypography.bodyLg()(AppColors.textPrimary),
                               decoration: InputDecoration(
                                 hintText: 'GA-183-1234',
-                                hintStyle: AppTypography.body(AppColors.textMuted),
+                                hintStyle: AppTypography.body()(AppColors.textMuted),
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
@@ -570,7 +570,7 @@ class _BusinessLocationScreenState extends State<BusinessLocationScreen> {
                           Expanded(
                             child: Text(
                               'This location will be used for all deliveries to your business. Make sure it\'s accurate.',
-                              style: AppTypography.body(AppColors.warning).copyWith(
+                              style: AppTypography.body()(AppColors.warning).copyWith(
                                 fontWeight: FontWeight.w500,
                                 height: 1.4,
                               ),
@@ -636,7 +636,7 @@ class _FormField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+          style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),

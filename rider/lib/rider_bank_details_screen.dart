@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'rider_under_review_screen.dart';
 
 class RiderBankDetailsScreen extends StatefulWidget {
@@ -105,7 +105,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                           child: Text(
                             'Rider Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -144,7 +144,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                       
                       Text(
                         'Payment Setup',
-                        style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                        style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                           fontSize: 28,
                           fontWeight: FontWeight.w700,
                           height: 1.2,
@@ -158,7 +158,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                       
                       Text(
                         'How would you like to receive your earnings?',
-                        style: AppTypography.body(AppColors.textSecondary).copyWith(
+                        style: AppTypography.body()(AppColors.textSecondary).copyWith(
                           fontSize: 16,
                           height: 1.5,
                         ),
@@ -253,7 +253,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                             alignment: Alignment.center,
                             child: Text(
                               '+233',
-                              style: AppTypography.body(AppColors.textSecondary).copyWith(
+                              style: AppTypography.body()(AppColors.textSecondary).copyWith(
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -269,7 +269,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                               ],
                               decoration: InputDecoration(
                                 hintText: '24 123 4567',
-                                hintStyle: AppTypography.body(AppColors.textMuted),
+                                hintStyle: AppTypography.body()(AppColors.textMuted),
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
@@ -303,7 +303,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                           style: AppTypography.body(),
                           decoration: InputDecoration(
                             hintText: 'Select your bank',
-                            hintStyle: AppTypography.body(AppColors.textMuted),
+                            hintStyle: AppTypography.body()(AppColors.textMuted),
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -346,7 +346,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                           ],
                           decoration: InputDecoration(
                             hintText: 'Enter 10-14 digit account number',
-                            hintStyle: AppTypography.body(AppColors.textMuted),
+                            hintStyle: AppTypography.body()(AppColors.textMuted),
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -382,7 +382,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                         style: AppTypography.body(),
                         decoration: InputDecoration(
                           hintText: 'Enter account holder name',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
@@ -411,7 +411,7 @@ class _RiderBankDetailsScreenState extends State<RiderBankDetailsScreen> {
                     
                     Text(
                       'Must match the name registered with your ${_isMobileMoney ? 'mobile money provider' : 'bank'}',
-                      style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                      style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                         height: 1.4,
                       ),
                     ),

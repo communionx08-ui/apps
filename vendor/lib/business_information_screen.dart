@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'business_location_screen.dart';
 
 class BusinessInformationScreen extends StatefulWidget {
@@ -107,7 +107,7 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                           child: Text(
                             'Vendor Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -150,7 +150,7 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                     // Header with modern entrance animation
                     Text(
                       'Tell us about your\nbusiness',
-                      style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                      style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                         fontSize: 28,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -164,7 +164,7 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                     
                     Text(
                       'Help us understand your business better with some basic details',
-                      style: AppTypography.body(AppColors.textSecondary).copyWith(
+                      style: AppTypography.body()(AppColors.textSecondary).copyWith(
                         fontSize: 16,
                         height: 1.5,
                       ),
@@ -187,10 +187,10 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                       label: 'Business Name',
                       child: TextFormField(
                         controller: _businessNameCtrl,
-                        style: AppTypography.bodyLg(AppColors.textPrimary),
+                        style: AppTypography.bodyLg()(AppColors.textPrimary),
                         decoration: InputDecoration(
                           hintText: 'e.g., Papaye Fast Food',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
@@ -223,12 +223,12 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                       label: 'Business Description',
                       child: TextFormField(
                         controller: _businessDescCtrl,
-                        style: AppTypography.bodyLg(AppColors.textPrimary),
+                        style: AppTypography.bodyLg()(AppColors.textPrimary),
                         maxLines: 4,
                         maxLength: 200,
                         decoration: InputDecoration(
                           hintText: 'Tell us about your services and what makes you special...',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
@@ -272,7 +272,7 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                             label: 'Business Phone',
                             child: TextFormField(
                               controller: _businessPhoneCtrl,
-                              style: AppTypography.bodyLg(AppColors.textPrimary),
+                              style: AppTypography.bodyLg()(AppColors.textPrimary),
                               keyboardType: TextInputType.phone,
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly,
@@ -280,9 +280,9 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                               ],
                               decoration: InputDecoration(
                                 hintText: '20 123 4567',
-                                hintStyle: AppTypography.body(AppColors.textMuted),
+                                hintStyle: AppTypography.body()(AppColors.textMuted),
                                 prefixText: '+233 ',
-                                prefixStyle: AppTypography.bodyLg(AppColors.textPrimary),
+                                prefixStyle: AppTypography.bodyLg()(AppColors.textPrimary),
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
@@ -318,11 +318,11 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                             label: 'Business Email',
                             child: TextFormField(
                               controller: _businessEmailCtrl,
-                              style: AppTypography.bodyLg(AppColors.textPrimary),
+                              style: AppTypography.bodyLg()(AppColors.textPrimary),
                               keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(
                                 hintText: 'contact@business.com',
-                                hintStyle: AppTypography.body(AppColors.textMuted),
+                                hintStyle: AppTypography.body()(AppColors.textMuted),
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
@@ -378,7 +378,7 @@ class _BusinessInformationScreenState extends State<BusinessInformationScreen> {
                           Expanded(
                             child: Text(
                               'Next, we\'ll help you set up your business location for accurate delivery',
-                              style: AppTypography.body(AppColors.primary).copyWith(
+                              style: AppTypography.body()(AppColors.primary).copyWith(
                                 fontWeight: FontWeight.w500,
                                 height: 1.4,
                               ),
@@ -438,7 +438,7 @@ class _SectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: AppTypography.h2(AppColors.textPrimary).copyWith(
+      style: AppTypography.h2()(AppColors.textPrimary).copyWith(
         fontSize: 18,
         fontWeight: FontWeight.w600,
       ),
@@ -467,7 +467,7 @@ class _FormField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+          style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),

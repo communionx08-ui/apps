@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 /// Simple vendor model for the Swift customer app
 class SwiftVendor {
   final String id;

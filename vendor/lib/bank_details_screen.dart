@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'under_review_screen.dart';
 
 class BankDetailsScreen extends StatefulWidget {
@@ -118,7 +118,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                           child: Text(
                             'Vendor Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -161,7 +161,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                     // Header with modern entrance animation
                     Text(
                       'Payment Setup',
-                      style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                      style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                         fontSize: 28,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -175,7 +175,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                     
                     Text(
                       'How would you like to receive payments?',
-                      style: AppTypography.body(AppColors.textSecondary).copyWith(
+                      style: AppTypography.body()(AppColors.textSecondary).copyWith(
                         fontSize: 16,
                         height: 1.5,
                       ),
@@ -225,7 +225,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                       // Mobile Money Form
                       Text(
                         'Select Provider',
-                        style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+                        style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                       )
@@ -265,7 +265,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                       // Phone number input
                       Text(
                         'Phone Number',
-                        style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+                        style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -286,7 +286,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                             alignment: Alignment.center,
                             child: Text(
                               '+233',
-                              style: AppTypography.bodyLg(AppColors.textSecondary).copyWith(
+                              style: AppTypography.bodyLg()(AppColors.textSecondary).copyWith(
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -294,7 +294,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                           Expanded(
                             child: TextFormField(
                               controller: _accountNumberCtrl,
-                              style: AppTypography.bodyLg(AppColors.textPrimary),
+                              style: AppTypography.bodyLg()(AppColors.textPrimary),
                               keyboardType: TextInputType.phone,
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly,
@@ -302,7 +302,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                               ],
                               decoration: InputDecoration(
                                 hintText: '24 123 4567',
-                                hintStyle: AppTypography.body(AppColors.textMuted),
+                                hintStyle: AppTypography.body()(AppColors.textMuted),
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
@@ -344,10 +344,10 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                         label: 'Bank Name',
                         child: DropdownButtonFormField<String>(
                           value: _bankNameCtrl.text.isEmpty ? null : _bankNameCtrl.text,
-                          style: AppTypography.bodyLg(AppColors.textPrimary),
+                          style: AppTypography.bodyLg()(AppColors.textPrimary),
                           decoration: InputDecoration(
                             hintText: 'Select your bank',
-                            hintStyle: AppTypography.body(AppColors.textMuted),
+                            hintStyle: AppTypography.body()(AppColors.textMuted),
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -398,7 +398,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                         label: 'Account Number',
                         child: TextFormField(
                           controller: _accountNumberCtrl,
-                          style: AppTypography.bodyLg(AppColors.textPrimary),
+                          style: AppTypography.bodyLg()(AppColors.textPrimary),
                           keyboardType: TextInputType.number,
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
@@ -406,7 +406,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                           ],
                           decoration: InputDecoration(
                             hintText: 'Enter 10-14 digit account number',
-                            hintStyle: AppTypography.body(AppColors.textMuted),
+                            hintStyle: AppTypography.body()(AppColors.textMuted),
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
@@ -444,10 +444,10 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                       label: 'Account Name',
                       child: TextFormField(
                         controller: _accountNameCtrl,
-                        style: AppTypography.bodyLg(AppColors.textPrimary),
+                        style: AppTypography.bodyLg()(AppColors.textPrimary),
                         decoration: InputDecoration(
                           hintText: 'Enter account holder name',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
@@ -478,7 +478,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
 
                     Text(
                       'Must match the name registered with your ${_isMobileMoney ? 'mobile money provider' : 'bank'}',
-                      style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                      style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                         height: 1.4,
                       ),
                     )
@@ -509,7 +509,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                               const SizedBox(width: 8),
                               Text(
                                 'SETTLEMENT INFORMATION',
-                                style: AppTypography.bodyLg(AppColors.primary).copyWith(
+                                style: AppTypography.bodyLg()(AppColors.primary).copyWith(
                                   fontWeight: FontWeight.w700,
                                   letterSpacing: 0.5,
                                 ),
@@ -538,11 +538,11 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                             children: [
                               Text(
                                 'Minimum payout',
-                                style: AppTypography.bodyLg(AppColors.textSecondary),
+                                style: AppTypography.bodyLg()(AppColors.textSecondary),
                               ),
                               Text(
                                 'GHS 50.00',
-                                style: AppTypography.bodyLg(AppColors.primary).copyWith(
+                                style: AppTypography.bodyLg()(AppColors.primary).copyWith(
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
@@ -582,7 +582,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                   const SizedBox(height: 12),
                   Text(
                     'By clicking complete, you agree to our Vendor Payment Terms',
-                    style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                    style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                       height: 1.4,
                     ),
                     textAlign: TextAlign.center,
@@ -727,7 +727,7 @@ class _FormField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+          style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -757,7 +757,7 @@ class _SettlementRow extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTypography.bodyLg(AppColors.textSecondary),
+          style: AppTypography.bodyLg()(AppColors.textSecondary),
         ),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
@@ -774,7 +774,7 @@ class _SettlementRow extends StatelessWidget {
           ),
           child: Text(
             value,
-            style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+            style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),

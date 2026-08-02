@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'rider_vehicle_information_screen.dart';
 
 class RiderPersonalInformationScreen extends StatefulWidget {
@@ -127,7 +127,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
           SnackBar(
             content: Text(
               'Failed to save. Please try again.',
-              style: AppTypography.body(Colors.white),
+              style: AppTypography.body()(Colors.white),
             ),
             backgroundColor: AppColors.danger,
             behavior: SnackBarBehavior.floating,
@@ -169,7 +169,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
             filled: true,
             fillColor: Colors.white,
             hintText: hintText,
-            hintStyle: AppTypography.body(AppColors.textMuted).copyWith(fontSize: 16),
+            hintStyle: AppTypography.body()(AppColors.textMuted).copyWith(fontSize: 16),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(color: AppColors.primary.withOpacity(0.2)),
@@ -272,7 +272,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
                           child: Text(
                             'Rider Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -317,7 +317,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
                       widget.isVerificationLocked 
                         ? 'Additional Information'
                         : 'Personal Information',
-                      style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                      style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                         fontSize: 28,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -333,7 +333,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
                       widget.isVerificationLocked
                         ? 'Your identity has been verified. Please complete the remaining details.'
                         : 'Please provide your legal details for verification.',
-                      style: AppTypography.body(AppColors.textSecondary).copyWith(
+                      style: AppTypography.body()(AppColors.textSecondary).copyWith(
                         fontSize: 16,
                         height: 1.5,
                       ),
@@ -396,7 +396,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
                                       const SizedBox(width: 4),
                                       Text(
                                         'Verified',
-                                        style: AppTypography.bodySm(AppColors.success).copyWith(
+                                        style: AppTypography.bodySm()(AppColors.success).copyWith(
                                           fontSize: 11,
                                           fontWeight: FontWeight.w700,
                                         ),
@@ -421,7 +421,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
                                 Expanded(
                                   child: Text(
                                     _ghanaCardController.text,
-                                    style: AppTypography.body(AppColors.textPrimary).copyWith(
+                                    style: AppTypography.body()(AppColors.textPrimary).copyWith(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -462,7 +462,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
                                   children: [
                                     Text(
                                       _dateOfBirth,
-                                      style: AppTypography.body(AppColors.textPrimary).copyWith(fontSize: 16),
+                                      style: AppTypography.body()(AppColors.textPrimary).copyWith(fontSize: 16),
                                     ),
                                     const Spacer(),
                                     const Icon(Icons.calendar_today, size: 20, color: AppColors.textMuted),
@@ -525,7 +525,7 @@ class _RiderPersonalInformationScreenState extends State<RiderPersonalInformatio
                               const SizedBox(width: 8),
                               Text(
                                 '+233 24 000 0000',
-                                style: AppTypography.body(AppColors.textSecondary).copyWith(
+                                style: AppTypography.body()(AppColors.textSecondary).copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                 ),

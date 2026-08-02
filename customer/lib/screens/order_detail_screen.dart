@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../models/order.dart';
-import '../widgets/address_modal.dart';
-import '../widgets/cancel_reason_modal.dart';
 import '../providers/active_order_provider.dart';
 import '../providers/order_history_provider.dart';
 import 'order_tracking_screen.dart';

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -846,7 +846,7 @@ class _CatalogueStoreScreenState extends ConsumerState<CatalogueStoreScreen> {
   Widget _circleButton({required IconData icon, required VoidCallback onTap, Color iconColor = const Color(0xFF0F172A)}) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.9),
+        color: Colors.white.withOpacity(0.9),
         shape: BoxShape.circle,
         boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))],
       ),
@@ -1103,7 +1103,7 @@ class _CatalogueStoreScreenState extends ConsumerState<CatalogueStoreScreen> {
                             gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
-                              colors: [Colors.black.withValues(alpha: 0.4), Colors.transparent],
+                              colors: [Colors.black.withOpacity(0.4), Colors.transparent],
                             ),
                           ),
                         ),
@@ -1205,7 +1205,7 @@ class _CatalogueStoreScreenState extends ConsumerState<CatalogueStoreScreen> {
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF0068FF).withValues(alpha: 0.4),
+                        color: const Color(0xFF0068FF).withOpacity(0.4),
                         blurRadius: 16,
                         offset: const Offset(0, 4),
                       ),
@@ -1217,7 +1217,7 @@ class _CatalogueStoreScreenState extends ConsumerState<CatalogueStoreScreen> {
                         width: 28,
                         height: 28,
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.2),
+                          color: Colors.white.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Center(

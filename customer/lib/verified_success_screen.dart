@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'profile_setup_screen.dart';
 
 class VerifiedSuccessScreen extends StatefulWidget {
@@ -143,7 +143,7 @@ class _VerifiedSuccessScreenState extends State<VerifiedSuccessScreen>
                       Text(
                         'Your phone number has been\nsuccessfully verified',
                         textAlign: TextAlign.center,
-                        style: AppTypography.body(AppColors.textMuted).copyWith(
+                        style: AppTypography.body()(AppColors.textMuted).copyWith(
                           fontSize: 16,
                           height: 1.6,
                         ),
@@ -174,7 +174,7 @@ class _VerifiedSuccessScreenState extends State<VerifiedSuccessScreen>
                       
                       Text(
                         'Setting up your account...',
-                        style: AppTypography.body(AppColors.textMuted).copyWith(
+                        style: AppTypography.body()(AppColors.textMuted).copyWith(
                           fontSize: 15,
                         ),
                       )

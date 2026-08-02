@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'all_set_screen.dart';
 
 class LocationPermissionScreen extends StatefulWidget {
@@ -86,7 +86,7 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen>
           SnackBar(
             content: Text(
               'Location access denied. You can enable it later in settings.',
-              style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+              style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
             ),
             backgroundColor: AppColors.textPrimary,
             behavior: SnackBarBehavior.floating,
@@ -281,7 +281,7 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen>
                     Text(
                       'We need your location to match you with nearby delivery requests and provide accurate pickup and delivery routes.',
                       textAlign: TextAlign.center,
-                      style: AppTypography.body(AppColors.textMuted).copyWith(
+                      style: AppTypography.body()(AppColors.textMuted).copyWith(
                         fontSize: 16,
                         height: 1.6,
                       ),
@@ -338,7 +338,7 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen>
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         child: Text(
                           'Maybe later',
-                          style: AppTypography.body(AppColors.textMuted).copyWith(
+                          style: AppTypography.body()(AppColors.textMuted).copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),

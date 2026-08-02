@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'bank_details_screen.dart';
 
 class DocumentUploadScreen extends StatefulWidget {
@@ -63,7 +63,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
       SnackBar(
         content: Text(
           'Document uploaded successfully',
-          style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+          style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
         ),
         backgroundColor: AppColors.success,
         behavior: SnackBarBehavior.floating,
@@ -167,7 +167,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                           child: Text(
                             'Vendor Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -208,7 +208,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                   // Header with modern entrance animation
                   Text(
                     'Business Documents',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -222,7 +222,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                   
                   Text(
                     'Please provide the necessary legal documents for verification',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -260,7 +260,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                             widget.vendorType == 'business'
                                 ? 'As a Business Vendor, you\'ll need to provide your business registration certificate and number.'
                                 : 'As an Individual Vendor, business registration is optional. You can upgrade to Business Vendor later.',
-                            style: AppTypography.body(
+                            style: AppTypography.body()(
                               widget.vendorType == 'business' ? AppColors.primary : AppColors.success
                             ).copyWith(
                               fontWeight: FontWeight.w500,
@@ -288,7 +288,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                       const SizedBox(width: 8),
                       Text(
                         'Required Documents',
-                        style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                        style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
@@ -315,12 +315,12 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                       onTap: () => _simulateUpload('businessReg'),
                     ),
                     additionalField: TextFormField(
-                      style: AppTypography.bodyLg(AppColors.textPrimary),
+                      style: AppTypography.bodyLg()(AppColors.textPrimary),
                       initialValue: _registrationNumber,
                       decoration: InputDecoration(
                         labelText: 'Registration Number',
                         hintText: 'e.g. BN-123,456,789',
-                        hintStyle: AppTypography.body(AppColors.textMuted),
+                        hintStyle: AppTypography.body()(AppColors.textMuted),
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
@@ -391,7 +391,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                       const SizedBox(width: 8),
                       Text(
                         'Additional Documents (Optional)',
-                        style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                        style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
@@ -479,7 +479,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                     const SizedBox(height: 12),
                     Text(
                       _getMissingRequirementsText(),
-                      style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                      style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                         height: 1.4,
                       ),
                       textAlign: TextAlign.center,
@@ -488,7 +488,7 @@ class _DocumentUploadScreenState extends State<DocumentUploadScreen> {
                     const SizedBox(height: 12),
                     Text(
                       'By continuing, you agree to our Vendor Terms & Conditions',
-                      style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                      style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                         height: 1.4,
                       ),
                       textAlign: TextAlign.center,
@@ -527,7 +527,7 @@ class _DocumentSection extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+          style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -616,7 +616,7 @@ class _UploadZone extends StatelessWidget {
                   const SizedBox(height: 2),
                   Text(
                     sublabel!,
-                    style: AppTypography.bodySm(AppColors.textMuted),
+                    style: AppTypography.bodySm()(AppColors.textMuted),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -699,7 +699,7 @@ class _OptionalDocRow extends StatelessWidget {
               Expanded(
                 child: Text(
                   label,
-                  style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+                  style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
                     fontWeight: FontWeight.w500,
                   ),
                 ),

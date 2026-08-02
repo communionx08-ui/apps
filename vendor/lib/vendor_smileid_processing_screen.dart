@@ -1,8 +1,8 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:async';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'package:lottie/lottie.dart';
 import 'owner_information_screen.dart';
 
@@ -244,7 +244,7 @@ class _VendorSmileIdProcessingScreenState
               // Title
               Text(
                 _getTitleText(),
-                style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                   fontSize: 24,
                   fontWeight: FontWeight.w700,
                 ),
@@ -259,7 +259,7 @@ class _VendorSmileIdProcessingScreenState
               // Message
               Text(
                 _getMessageText(),
-                style: AppTypography.body(AppColors.textSecondary).copyWith(
+                style: AppTypography.body()(AppColors.textSecondary).copyWith(
                   fontSize: 16,
                   height: 1.5,
                 ),
@@ -286,7 +286,7 @@ class _VendorSmileIdProcessingScreenState
                     children: [
                       Text(
                         'Verified Information',
-                        style: AppTypography.body(AppColors.success).copyWith(
+                        style: AppTypography.body()(AppColors.success).copyWith(
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
                         ),
@@ -311,7 +311,7 @@ class _VendorSmileIdProcessingScreenState
                 
                 Text(
                   'Continuing automatically...',
-                  style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                  style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                     fontSize: 14,
                   ),
                 )
@@ -381,13 +381,13 @@ class _InfoRow extends StatelessWidget {
         children: [
           Text(
             label,
-            style: AppTypography.body(AppColors.textSecondary).copyWith(
+            style: AppTypography.body()(AppColors.textSecondary).copyWith(
               fontSize: 14,
             ),
           ),
           Text(
             value,
-            style: AppTypography.body(AppColors.textPrimary).copyWith(
+            style: AppTypography.body()(AppColors.textPrimary).copyWith(
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),

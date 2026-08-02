@@ -1,8 +1,8 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:swift_core/swift_core.dart';
-import 'home_screen.dart';
+import 'home_screen_v2.dart';
 
 class AllSetScreen extends StatefulWidget {
   const AllSetScreen({super.key});
@@ -82,7 +82,7 @@ class _AllSetScreenState extends State<AllSetScreen>
     Navigator.pushAndRemoveUntil(
       context,
       PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) => const HomeScreen(),
+        pageBuilder: (context, animation, secondaryAnimation) => const HomeScreenV2(),
         transitionDuration: const Duration(milliseconds: 600),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return FadeTransition(
@@ -244,7 +244,7 @@ class _AllSetScreenState extends State<AllSetScreen>
                   Text(
                     'Welcome to Swift Rider! Start accepting delivery requests and earning in your area.',
                     textAlign: TextAlign.center,
-                    style: AppTypography.body(AppColors.textMuted).copyWith(
+                    style: AppTypography.body()(AppColors.textMuted).copyWith(
                       fontSize: 16,
                       height: 1.6,
                     ),
@@ -298,7 +298,7 @@ class _AllSetScreenState extends State<AllSetScreen>
                   
                   Text(
                     'Taking you to the app in a moment...',
-                    style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                    style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                       fontSize: 13,
                     ),
                   )

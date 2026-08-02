@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:swift_core/swift_core.dart';
 import '../core/theme/app_fonts.dart';
 import '../providers/notifications_provider.dart';
 

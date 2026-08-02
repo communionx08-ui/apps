@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 import 'app_typography.dart';
@@ -107,8 +108,8 @@ class SwiftTheme {
           borderRadius: BorderRadius.circular(14),
           borderSide: const BorderSide(color: AppColors.danger),
         ),
-        hintStyle: AppTypography.body(AppColors.textMuted),
-        labelStyle: AppTypography.body(AppColors.textSecondary),
+        hintStyle: AppTypography.body()(AppColors.textMuted),
+        labelStyle: AppTypography.body()(AppColors.textSecondary),
       ),
 
       // ── Cards / bottom sheets / dialogs ────────────────────────────
@@ -138,7 +139,7 @@ class SwiftTheme {
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
         backgroundColor: AppColors.textPrimary,
-        contentTextStyle: AppTypography.body(Colors.white),
+        contentTextStyle: AppTypography.body()(Colors.white),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),

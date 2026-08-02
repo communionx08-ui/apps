@@ -1,7 +1,7 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'document_upload_screen.dart';
 import 'vendor_smileid_personal_details_screen.dart';
 
@@ -102,7 +102,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
           SnackBar(
             content: Text(
               'Identity verification is required to proceed',
-              style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+              style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
             ),
             backgroundColor: AppColors.danger,
             behavior: SnackBarBehavior.floating,
@@ -183,7 +183,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                           child: Text(
                             'Vendor Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -226,7 +226,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                     // Header with modern entrance animation
                     Text(
                       'Owner Information',
-                      style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                      style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                         fontSize: 28,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -240,7 +240,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                     
                     Text(
                       'Please provide the details of the primary business owner',
-                      style: AppTypography.body(AppColors.textSecondary).copyWith(
+                      style: AppTypography.body()(AppColors.textSecondary).copyWith(
                         fontSize: 16,
                         height: 1.5,
                       ),
@@ -256,13 +256,13 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                       label: 'Full Name',
                       child: TextFormField(
                         controller: _ownerNameCtrl,
-                        style: AppTypography.bodyLg(_identityVerified 
+                        style: AppTypography.bodyLg()(_identityVerified 
                             ? AppColors.textPrimary.withOpacity(0.7)
                             : AppColors.textPrimary),
                         enabled: !_identityVerified,
                         decoration: InputDecoration(
                           hintText: 'e.g., Kofi Mensah',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: _identityVerified 
                               ? AppColors.primary.withOpacity(0.05)
@@ -313,7 +313,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                                         const SizedBox(width: 4),
                                         Text(
                                           'VERIFIED',
-                                          style: AppTypography.bodySm(AppColors.success).copyWith(
+                                          style: AppTypography.bodySm()(AppColors.success).copyWith(
                                             fontWeight: FontWeight.w700,
                                             fontSize: 10,
                                             letterSpacing: 0.5,
@@ -341,10 +341,10 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                       label: 'Role',
                       child: DropdownButtonFormField<String>(
                         value: _selectedRole,
-                        style: AppTypography.bodyLg(AppColors.textPrimary),
+                        style: AppTypography.bodyLg()(AppColors.textPrimary),
                         decoration: InputDecoration(
                           hintText: 'Select role',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
@@ -403,7 +403,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                             Expanded(
                               child: Text(
                                 '+233 24 123 4567',
-                                style: AppTypography.bodyLg(AppColors.textPrimary.withOpacity(0.7)),
+                                style: AppTypography.bodyLg()(AppColors.textPrimary.withOpacity(0.7)),
                               ),
                             ),
                             Container(
@@ -426,7 +426,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                                   const SizedBox(width: 4),
                                   Text(
                                     'VERIFIED',
-                                    style: AppTypography.bodySm(AppColors.success).copyWith(
+                                    style: AppTypography.bodySm()(AppColors.success).copyWith(
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 0.5,
                                     ),
@@ -446,11 +446,11 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                       label: 'Email Address',
                       child: TextFormField(
                         controller: _ownerEmailCtrl,
-                        style: AppTypography.bodyLg(AppColors.textPrimary),
+                        style: AppTypography.bodyLg()(AppColors.textPrimary),
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           hintText: 'e.g., kofi.mensah@ghana-biz.com',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
@@ -486,13 +486,13 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                       label: 'Ghana Card Number',
                       child: TextFormField(
                         controller: _ghanaCardCtrl,
-                        style: AppTypography.bodyLg(_identityVerified 
+                        style: AppTypography.bodyLg()(_identityVerified 
                             ? AppColors.textPrimary.withOpacity(0.7)
                             : AppColors.textPrimary),
                         enabled: !_identityVerified,
                         decoration: InputDecoration(
                           hintText: 'GHA-723145678-9',
-                          hintStyle: AppTypography.body(AppColors.textMuted),
+                          hintStyle: AppTypography.body()(AppColors.textMuted),
                           filled: true,
                           fillColor: _identityVerified 
                               ? AppColors.primary.withOpacity(0.05)
@@ -543,7 +543,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                                         const SizedBox(width: 4),
                                         Text(
                                           'VERIFIED',
-                                          style: AppTypography.bodySm(AppColors.success).copyWith(
+                                          style: AppTypography.bodySm()(AppColors.success).copyWith(
                                             fontWeight: FontWeight.w700,
                                             fontSize: 10,
                                             letterSpacing: 0.5,
@@ -607,7 +607,7 @@ class _OwnerInformationScreenState extends State<OwnerInformationScreen> {
                     const SizedBox(height: 12),
                     Text(
                       'Identity verification is required to proceed to the next step',
-                      style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                      style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                         height: 1.4,
                       ),
                       textAlign: TextAlign.center,
@@ -644,7 +644,7 @@ class _FormField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTypography.bodyLg(AppColors.textPrimary).copyWith(
+          style: AppTypography.bodyLg()(AppColors.textPrimary).copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -707,7 +707,7 @@ class _IdentityVerificationCard extends StatelessWidget {
           // Title & subtitle
           Text(
             verified ? 'Identity Verified' : 'Identity Verification',
-            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
               fontSize: 18,
               fontWeight: FontWeight.w600,
             ),
@@ -718,7 +718,7 @@ class _IdentityVerificationCard extends StatelessWidget {
             verified
                 ? 'Your identity has been successfully verified'
                 : 'Verify your identity with a quick selfie',
-            style: AppTypography.body(AppColors.textSecondary).copyWith(
+            style: AppTypography.body()(AppColors.textSecondary).copyWith(
               height: 1.4,
             ),
             textAlign: TextAlign.center,
@@ -758,7 +758,7 @@ class _IdentityVerificationCard extends StatelessWidget {
                   const SizedBox(width: 6),
                   Text(
                     'Verified',
-                    style: AppTypography.bodyLg(AppColors.success).copyWith(
+                    style: AppTypography.bodyLg()(AppColors.success).copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),

@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'rider_bank_details_screen.dart';
 
 class RiderDocumentUploadScreen extends StatefulWidget {
@@ -51,7 +51,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
       SnackBar(
         content: Text(
           'Document uploaded successfully',
-          style: AppTypography.body(Colors.white).copyWith(fontSize: 14),
+          style: AppTypography.body()(Colors.white).copyWith(fontSize: 14),
         ),
         backgroundColor: AppColors.success,
         behavior: SnackBarBehavior.floating,
@@ -146,7 +146,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
                           child: Text(
                             'Rider Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -187,7 +187,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
                   // Header
                   Text(
                     'Upload Documents',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -201,7 +201,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
                   
                   Text(
                     'Please provide the necessary documents for verification.',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -234,7 +234,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
                         ),
                         child: Text(
                           'Required',
-                          style: AppTypography.body(AppColors.primary).copyWith(
+                          style: AppTypography.body()(AppColors.primary).copyWith(
                             fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
@@ -254,7 +254,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
                     children: [
                       Text(
                         'Ghana Card Number',
-                        style: AppTypography.body(AppColors.textSecondary).copyWith(
+                        style: AppTypography.body()(AppColors.textSecondary).copyWith(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                         ),
@@ -267,7 +267,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
                           filled: true,
                           fillColor: Colors.white,
                           hintText: 'GHA-700000000-0',
-                          hintStyle: AppTypography.body(AppColors.textMuted).copyWith(fontSize: 16),
+                          hintStyle: AppTypography.body()(AppColors.textMuted).copyWith(fontSize: 16),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: AppColors.primary.withOpacity(0.2)),
@@ -406,7 +406,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
                         Expanded(
                           child: Text(
                             'Your documents will be reviewed by our team within 24-48 hours. Ensure they are clear and not expired.',
-                            style: AppTypography.body(AppColors.textSecondary).copyWith(
+                            style: AppTypography.body()(AppColors.textSecondary).copyWith(
                               fontSize: 14,
                               height: 1.4,
                             ),
@@ -449,7 +449,7 @@ class _RiderDocumentUploadScreenState extends State<RiderDocumentUploadScreen> {
                 const SizedBox(height: 12),
                 Text(
                   _getMissingRequirementsText(),
-                  style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                  style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                     height: 1.4,
                   ),
                   textAlign: TextAlign.center,
@@ -538,7 +538,7 @@ class _UploadZone extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   sublabel,
-                  style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                  style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                     fontSize: 12,
                   ),
                   textAlign: TextAlign.center,
@@ -636,14 +636,14 @@ class _OptionalDocRow extends StatelessWidget {
                   children: [
                     Text(
                       label,
-                      style: AppTypography.body(AppColors.textPrimary).copyWith(
+                      style: AppTypography.body()(AppColors.textPrimary).copyWith(
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
                       ),
                     ),
                     Text(
                       sublabel,
-                      style: AppTypography.bodySm(AppColors.textMuted).copyWith(
+                      style: AppTypography.bodySm()(AppColors.textMuted).copyWith(
                         fontSize: 12,
                       ),
                     ),

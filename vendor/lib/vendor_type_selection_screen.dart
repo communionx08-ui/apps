@@ -1,6 +1,6 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:swift_core/swift_core.dart';
 import 'business_category_screen.dart';
 
 class VendorTypeSelectionScreen extends StatefulWidget {
@@ -79,7 +79,7 @@ class _VendorTypeSelectionScreenState extends State<VendorTypeSelectionScreen> {
                           child: Text(
                             'Vendor Setup',
                             textAlign: TextAlign.center,
-                            style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                            style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -120,7 +120,7 @@ class _VendorTypeSelectionScreenState extends State<VendorTypeSelectionScreen> {
                   // Header with modern entrance animation
                   Text(
                     'What type of vendor\nare you?',
-                    style: AppTypography.h1(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h1()(AppColors.textPrimary).copyWith(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
@@ -134,7 +134,7 @@ class _VendorTypeSelectionScreenState extends State<VendorTypeSelectionScreen> {
                   
                   Text(
                     'This helps us understand your registration requirements',
-                    style: AppTypography.body(AppColors.textSecondary).copyWith(
+                    style: AppTypography.body()(AppColors.textSecondary).copyWith(
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -220,7 +220,7 @@ class _VendorTypeSelectionScreenState extends State<VendorTypeSelectionScreen> {
                         Expanded(
                           child: Text(
                             'You can upgrade from Individual to Business Vendor later by providing business registration documents.',
-                            style: AppTypography.body(AppColors.primary).copyWith(
+                            style: AppTypography.body()(AppColors.primary).copyWith(
                               fontWeight: FontWeight.w500,
                               height: 1.4,
                             ),
@@ -348,7 +348,7 @@ class _VendorTypeCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     vendorType.title,
-                    style: AppTypography.h2(AppColors.textPrimary).copyWith(
+                    style: AppTypography.h2()(AppColors.textPrimary).copyWith(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                     ),
@@ -383,7 +383,7 @@ class _VendorTypeCard extends StatelessWidget {
             // Description
             Text(
               vendorType.description,
-              style: AppTypography.body(AppColors.textSecondary).copyWith(
+              style: AppTypography.body()(AppColors.textSecondary).copyWith(
                 fontSize: 14,
                 height: 1.4,
               ),
@@ -405,7 +405,7 @@ class _VendorTypeCard extends StatelessWidget {
                   Expanded(
                     child: Text(
                       feature,
-                      style: AppTypography.body(AppColors.textPrimary).copyWith(
+                      style: AppTypography.body()(AppColors.textPrimary).copyWith(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),

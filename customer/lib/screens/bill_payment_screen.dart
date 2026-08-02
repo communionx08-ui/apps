@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/address.dart';
-import '../models/order.dart';
 import '../providers/active_order_provider.dart';
 import '../providers/order_history_provider.dart';
 import 'order_confirmation_screen.dart';
@@ -107,8 +105,7 @@ class _BillPaymentScreenState extends ConsumerState<BillPaymentScreen> {
     setState(() => _isSubmitting = false);
 
     final billName = _billTypes[_selectedBillIndex]['name'] as String;
-    final order = Order(
-      id: OrderIdGenerator.next(ServiceType.bill),
+    final order = Order(id: 'LEGACY', serviceType: ServiceType.food),
       serviceType: ServiceType.bill,
       items: [
         OrderLineItem(
@@ -127,15 +124,8 @@ class _BillPaymentScreenState extends ConsumerState<BillPaymentScreen> {
       placedAt: DateTime.now(),
       eta: ServiceType.bill.defaultEta,
     );
-    ref.read(orderHistoryProvider.notifier).placeOrder(order);
-    ref.read(activeOrderProvider.notifier).setOrder(
-      ActiveOrder(
-        orderId: order.id,
-        serviceType: order.serviceType,
-        statusMessage: order.serviceType.defaultStatusMessage,
-        vendorName: order.vendorName,
-        eta: order.eta,
-      ),
+    ref.read(orderHistoryProvider.notifier).placeOrder(id: 'LEGACY', serviceType: ServiceType.food);
+    ref.read(activeOrderProvider.notifier).setOrder(id: 'LEGACY', serviceType: ServiceType.food),
     );
 
     OrderSimulationService.start(ref: ref, context: context, order: order);
@@ -195,7 +185,7 @@ class _BillPaymentScreenState extends ConsumerState<BillPaymentScreen> {
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(color: isActive ? Colors.transparent : const Color(0xFFE2E8F0)),
                         boxShadow: isActive
-                            ? [BoxShadow(color: const Color(0xFF0068FF).withValues(alpha: 0.25), blurRadius: 10, offset: const Offset(0, 4))]
+                            ? [BoxShadow(color: const Color(0xFF0068FF).withOpacity(0.25), blurRadius: 10, offset: const Offset(0, 4))]
                             : [],
                       ),
                       child: Column(
@@ -381,7 +371,7 @@ class _BillPaymentScreenState extends ConsumerState<BillPaymentScreen> {
                 decoration: BoxDecoration(
                   color: const Color(0xFFEFF6FF),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFF0068FF).withValues(alpha: 0.3)),
+                  border: Border.all(color: const Color(0xFF0068FF).withOpacity(0.3)),
                 ),
                 child: Column(
                   children: [
@@ -403,7 +393,7 @@ class _BillPaymentScreenState extends ConsumerState<BillPaymentScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 14),
-                      child: Divider(height: 1, color: const Color(0xFF0068FF).withValues(alpha: 0.2)),
+                      child: Divider(height: 1, color: const Color(0xFF0068FF).withOpacity(0.2)),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -437,7 +427,7 @@ class _BillPaymentScreenState extends ConsumerState<BillPaymentScreen> {
                     onPressed: _isSubmitting ? null : _onConfirm,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF0068FF),
-                      disabledBackgroundColor: const Color(0xFF0068FF).withValues(alpha: 0.5),
+                      disabledBackgroundColor: const Color(0xFF0068FF).withOpacity(0.5),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       elevation: 0,
                     ),

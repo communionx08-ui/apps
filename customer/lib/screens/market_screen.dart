@@ -1,13 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'order_confirmation_screen.dart';
-import '../models/address.dart';
-import '../models/order.dart';
 import '../providers/active_order_provider.dart';
 import '../providers/order_history_provider.dart';
-import '../widgets/address_modal.dart';
 import '../services/order_simulation_service.dart';
 
 /// Parses a display price like '₵30' into a double.
@@ -227,6 +224,26 @@ class _BrowseVendorsTabState extends State<_BrowseVendorsTab>
       time: '30-45 min',
       fee: '₵12 Delivery',
       market: 'Kaneshie Market',
+    ),
+    _MarketVendorData(
+      name: 'Yara Garden Spices',
+      imageUrl: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800',
+      categories: 'Spices • Herbs • Seasonings',
+      rating: '4.9',
+      distance: '1.2 km',
+      time: '20-30 min',
+      fee: '₵10 Delivery',
+      market: 'Makola Market',
+    ),
+    _MarketVendorData(
+      name: 'Uncle Seth\'s Meat Shop',
+      imageUrl: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=800',
+      categories: 'Beef • Lamb • Sausages',
+      rating: '4.6',
+      distance: '5.5 km',
+      time: '50-70 min',
+      fee: '₵20 Delivery',
+      market: 'Agbogloshie Market',
     ),
   ];
 

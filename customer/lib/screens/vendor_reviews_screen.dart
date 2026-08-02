@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/review.dart';
 import '../providers/reviews_provider.dart';
 
 const Color _dark = Color(0xFF0F172A);

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:swift_core/swift_core.dart';
+import 'package:flutter/material.dart';
 
 /// Reusable empty state widget for lists, tabs, and screens with no data.
 /// Optionally shows a GIF/image, title, subtitle, and a CTA button.

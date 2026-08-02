@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 
 /// The eight core Swift service verticals.
@@ -9,7 +10,9 @@ enum ServiceType {
   pharmacy,
   laundry,
   parcel,
-  errand;
+  errand,
+  bill,
+  queue;
 
   String get label {
     switch (this) {
@@ -29,6 +32,10 @@ enum ServiceType {
         return 'Parcel';
       case ServiceType.errand:
         return 'Errand';
+      case ServiceType.bill:
+        return 'Bill';
+      case ServiceType.queue:
+        return 'Queue';
     }
   }
 
@@ -50,6 +57,10 @@ enum ServiceType {
         return Icons.inventory_2_rounded;
       case ServiceType.errand:
         return Icons.directions_run_rounded;
+      case ServiceType.bill:
+        return Icons.receipt_long_rounded;
+      case ServiceType.queue:
+        return Icons.groups_rounded;
     }
   }
 
@@ -71,6 +82,10 @@ enum ServiceType {
         return const Color(0xFF10B981); // emerald
       case ServiceType.errand:
         return const Color(0xFFEF4444); // red
+      case ServiceType.bill:
+        return const Color(0xFF3B82F6); // blue
+      case ServiceType.queue:
+        return const Color(0xFF6366F1); // indigo
     }
   }
 
@@ -92,6 +107,10 @@ enum ServiceType {
         return 'Send a parcel';
       case ServiceType.errand:
         return 'Too busy to run it?';
+      case ServiceType.bill:
+        return 'Bills to pay?';
+      case ServiceType.queue:
+        return 'Lines too long?';
     }
   }
 
@@ -113,6 +132,10 @@ enum ServiceType {
         return 'Fast pickup & delivery';
       case ServiceType.errand:
         return 'An agent will run it for you';
+      case ServiceType.bill:
+        return 'Pay instantly with Swift';
+      case ServiceType.queue:
+        return 'An agent will wait for you';
     }
   }
 
@@ -134,6 +157,25 @@ enum ServiceType {
         return 'Where to?';
       case ServiceType.errand:
         return 'What do you need done?';
+      case ServiceType.bill:
+        return 'Search for biller...';
+      case ServiceType.queue:
+        return 'What line should we join?';
+    }
+  }
+
+  String get orderPrefix {
+    switch (this) {
+      case ServiceType.food: return 'FD';
+      case ServiceType.groceries: return 'GR';
+      case ServiceType.market: return 'MK';
+      case ServiceType.shop: return 'SH';
+      case ServiceType.pharmacy: return 'PH';
+      case ServiceType.laundry: return 'LD';
+      case ServiceType.parcel: return 'PC';
+      case ServiceType.errand: return 'ER';
+      case ServiceType.bill: return 'BL';
+      case ServiceType.queue: return 'QU';
     }
   }
 }

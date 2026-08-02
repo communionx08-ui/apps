@@ -1,3 +1,4 @@
+import 'package:swift_core/swift_core.dart';
 import 'package:flutter/material.dart';
 
 /// Bundled Inter font — single typeface for the entire app.

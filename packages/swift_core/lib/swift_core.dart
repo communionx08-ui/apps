@@ -1,27 +1,37 @@
-/// Swift Core — shared models, theme, widgets, networking & motion primitives
-/// used by the customer, vendor, and rider apps.
+import 'package:swift_core/swift_core.dart';
 library swift_core;
 
-// Theme
 export 'src/theme/app_colors.dart';
 export 'src/theme/app_fonts.dart';
 export 'src/theme/app_typography.dart';
 export 'src/theme/app_theme.dart';
 export 'src/theme/app_tokens.dart';
-
-// Motion
 export 'src/motion/motion.dart';
-
-// Widgets
 export 'src/widgets/animated_press.dart';
 export 'src/widgets/swift_button.dart';
+export 'src/widgets/swipe_to_confirm.dart';
+export 'src/widgets/animated_rider_marker.dart';
 
-// Models
 export 'src/models/service_type.dart';
 export 'src/models/vendor.dart';
+export 'src/models/order.dart';
+export 'src/models/address.dart';
+export 'src/models/voucher.dart';
+export 'src/models/review.dart';
+export 'src/models/laundry_item.dart';
+export 'src/models/errand_item.dart';
+export 'src/models/errand_type.dart';
+export 'src/models/food_item.dart';
+export 'src/models/payment_method.dart';
+export 'src/models/vendor_story.dart';
+export 'src/models/cart_item.dart';
+export 'src/models/place_models.dart';
 
-// Services
 export 'src/services/mock_smileid_service.dart';
+export 'src/services/haptic_service.dart';
+export 'src/services/unified_backend_service.dart';
+export 'src/services/background_tracking_service.dart';
+export 'src/services/catalog_service.dart';
+export 'src/services/live_registry_service.dart';
 
-// Verification
 export 'src/verification/smileid_data.dart';
